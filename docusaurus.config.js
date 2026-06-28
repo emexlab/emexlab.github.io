@@ -138,13 +138,13 @@ const config = {
             position: 'left'
           },
           {
-            to: 'emex64/docs',
-            label: 'emex64',
+            to: 'emexDE',
+            label: 'emexDE',
             position: 'left'
           },
           {
-            to: 'emexDE',
-            label: 'emexDE',
+            to: 'emex64/docs',
+            label: 'emex64',
             position: 'left'
           },
           /*{
