@@ -50,6 +50,7 @@
   align-items: stretch;
   justify-content: center;
   width: 100%;
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
 }
 
 .sectionsRow > * {
@@ -66,7 +67,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
+  text-align: center;
+  padding: 1rem 5%;
 }
 
 .sectionsRow > *:first-child {
@@ -75,6 +77,32 @@
 
 .sectionsRow > *:last-child {
   border-right: none;
+}
+
+@media screen and (max-width: 996px) {
+  .sectionsRow {
+    flex-direction: column;
+  }
+  .sectionsRow > * {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(
+      to right,
+      transparent,
+      gray 10%,
+      gray 90%,
+      transparent 100%
+    ) 1;
+  }
+  .sectionsRow > *:first-child {
+    border-top: none;
+  }
+
+  .sectionsRow > *:last-child {
+    border-bottom: none;
+  }
 }
 
 .navbar-icon:hover {

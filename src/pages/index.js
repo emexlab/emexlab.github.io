@@ -38,7 +38,18 @@ export default function Home() {
       <main className={styles.center}>
         <div className="sectionsRow">
           <div>
-            <h2>emexOS</h2>
+            <img src={useBaseUrl('/emexOS/img/logo.png')} className={clsx(styles.circle, styles.logo)} />
+            <Heading as="h2" className="hero__title">
+              emexOS
+            </Heading>
+            <p className="hero__subtitle">
+              Graphical OS written from scratch in C. It gives you full control over your system
+            </p>
+            <Link
+              className="button button--secondary button--lg"
+              to="/emexOS">
+              View
+            </Link>
           </div>
           <div>
             <ThemedImage
@@ -49,12 +60,17 @@ export default function Home() {
               }}
               className={styles.logo}
             />
-            <Heading as="h1" className="hero__title">
+            <Heading as="h2" className="hero__title">
               emexDE
             </Heading>
             <p className="hero__subtitle">
               IDE to develop native code iOS apps and tools on unjailbroken iOS
             </p>
+            <Link
+              className="button button--secondary button--lg"
+              to="/emexDE">
+              View
+            </Link>
           </div>
         </div>
       </main>

@@ -1,0 +1,43 @@
+# How emexOS starts programms after bootup
+
+after booting emexOS you will probably see this messages:
+```
+Process List:
+PID   State       Name            Entry Point
+----  ----------  --------------  -----------
+3     READY       app.elf         0x400A0000
+2     READY       __rt            0x40001000
+1     READY       kernel          0x40000000
+:: emxrc: exec /user/apps/gui.emx (ep) &
+:: emxrc: exec /emr/system/login.elf (elf)
+```
+
+the `:: emxrc:` is the initd/rc (run commands) which is the initialization daemon, you probably heard of daemons, like in linux `systemd`, or in macos `launchd` which are the first programms the kernel/OS starts after bootup.
+
+In emexOS, the .emxrc file tells the initd system which program to start,
+by simply opening the .emxrc file you can change which apps it will start and which not
+you will see variables like:
+```
+var login_path = ("/emr/system/login.elf")
+```
+and the exec command like this:
+```
+exec login_path
+```
+
+this will execute the `login.elf` from `/emr/system/`
+
+## How it works
+the emxrc file is pretty simple,
+you have variables`var` following with the variable name and the content of it.
+the exec command is short for execution, it will execute a programm, using the path from a variable.
+
+## formats
+emexOS supports both `.elf` and a packaging format called `.emx`, if you want to execute elf programms you can simply use `exec /path/to/elf_file` but if you want to use other formats you need to use `-f"format"` e.g. `-f"ep"`
+(ep is short for emex package). if you want to start programms in the background, not after each other then use `-bg`. to see how to create apps, read the article [how to create applications](create_applications)
+
+:::note
+
+hello
+
+:::

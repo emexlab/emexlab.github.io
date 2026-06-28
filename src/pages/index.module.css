@@ -20,6 +20,10 @@
   border-radius: 20%;
 }
 
+.circle {
+    border-radius: 50%;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;

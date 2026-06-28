@@ -8,7 +8,7 @@ const baseUrl = process.env.BASE_URL || '/';
 const config = {
   title: 'emexLabs',
   tagline: 'Unfolding the power of programming',
-  favicon: '/favicon.ico',
+  favicon: '/favicon.ico', // More favicons at headTags
 
   titleDelimiter: '·',
 
@@ -24,8 +24,6 @@ const config = {
 
   url: url,
   baseUrl: baseUrl,
-
-  onBrokenLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -140,7 +138,7 @@ const config = {
             position: 'left'
           },
           {
-            to: 'emex64',
+            to: 'emex64/docs',
             label: 'emex64',
             position: 'left'
           },
@@ -222,6 +220,7 @@ const config = {
       ],
     }),
   headTags: [
+    // Additional favicons
     {
       tagName: 'link',
       attributes: {
@@ -261,6 +260,7 @@ const config = {
         href: baseUrl + 'site.webmanifest',
       },
     },
+    // Metadata
     {
       tagName: 'link',
       attributes: {
@@ -294,6 +294,13 @@ const config = {
       },
     ]
   ],
+};
+
+if (['production', 'staging', 'testing'].includes(process.env.NODE_ENV)) {
+  config.onBrokenLinks = 'throw';
+  config.onBrokenAnchors = 'throw';
+  config.onBrokenMarkdownLinks = 'throw';
+  config.onDuplicateRoutes = 'throw';
 };
 
 export default config;

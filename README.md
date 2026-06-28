@@ -9,11 +9,14 @@
 [emexlab.org/emexDE](https://emexlab.org/emexDE/) was built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ## Todo
+emexDE:
 - Documentations to write:
     - [ ] nxtool guide
     - [ ] Syscalls
     - [ ] Entitlement system
     - [ ] Kernel explaination
+emex64:
+- Write docs
 
 ## Quickstart
 
