@@ -135,17 +135,22 @@ const config = {
           {
             to: 'emexOS',
             label: 'emexOS',
-            position: 'left'
+            position: 'left',
           },
           {
             to: 'emexDE',
             label: 'emexDE',
-            position: 'left'
+            position: 'left',
           },
           {
             to: 'emex64/docs',
             label: 'emex64',
-            position: 'left'
+            position: 'left',
+          },
+          {
+            to: 'emexMC',
+            label: 'emexMC',
+            position: 'right',
           },
           /*{
             type: 'localeDropdown',
