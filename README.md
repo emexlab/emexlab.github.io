@@ -11,12 +11,14 @@
 ## Todo
 emexOS:
 - [ ] Port it's homepage ([Original](https://emexos.github.io/web/page/0/index.html)|[Source](https://github.com/emexos/web/tree/main/page/0))
+
 emexDE:
 - Documentations to write:
     - [ ] nxtool guide
     - [ ] Syscalls
     - [ ] Entitlement system
     - [ ] Kernel explaination
+
 emex64:
 - [ ] Write docs
 
