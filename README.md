@@ -6,9 +6,11 @@
 [![Docusaurus Version](https://img.shields.io/github/package-json/dependency-version/emexlab/emexlab.github.io/%40docusaurus%2Fcore?style=for-the-badge&logo=docusaurus&logoColor=fff&label=Docusaurus&labelColor=000&color=fff
 )](https://docusaurus.io/)
 
-[emexlab.org/emexDE](https://emexlab.org/emexDE/) was built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+[emexlabs.org](https://emexlabs.org/) was built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ## Todo
+emexOS:
+- [ ] Port it's homepage ([Original](https://emexos.github.io/web/page/0/index.html)|[Source](https://github.com/emexos/web/tree/main/page/0))
 emexDE:
 - Documentations to write:
     - [ ] nxtool guide
@@ -16,7 +18,7 @@ emexDE:
     - [ ] Entitlement system
     - [ ] Kernel explaination
 emex64:
-- Write docs
+- [ ] Write docs
 
 ## Quickstart
 
@@ -63,4 +65,4 @@ You can find an automatic build of the newest state at https://emexlab.github.io
 This will build the site and upload it via ssh to the specified host as the specified user.
 
 > [!NOTE]
-> It’s recommended to set up SSH keys beforehand. Otherwise, you’ll be prompted for your SSH password three times during deployment.
+> It's recommended to set up SSH keys beforehand. Otherwise, you'll be prompted for your SSH password three times during deployment.
