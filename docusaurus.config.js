@@ -133,8 +133,8 @@ const config = {
         },
         items: [
           {
-            to: 'emexOS',
-            label: 'emexOS/docs', // Revert this to 'emexOS'
+            to: 'emexOS/docs', // Revert this to 'emexOS'
+            label: 'emexOS',
             position: 'left',
           },
           {
@@ -147,16 +147,17 @@ const config = {
             label: 'emex64',
             position: 'left',
           },
-          {
-            to: 'emexMC',
-            label: 'emexMC',
-            position: 'right',
-          },
           /*{
             type: 'localeDropdown',
             position: 'right',
             queryString: '?persistLocale=true',
           },*/
+          {
+            to: 'emexMC',
+            position: 'right',
+            className: "navbar-icon emexmc",
+            'aria-label': 'emexMC',
+          },
           {
             href: 'https://github.com/emexlab',
             position: 'right',
