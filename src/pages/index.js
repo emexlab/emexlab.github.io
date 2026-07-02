@@ -47,7 +47,7 @@ export default function Home() {
             </p>
             <Link
               className="button button--secondary button--lg"
-              to="/emexOS">
+              to="/emexOS/docs"> {/* Revert this to "/emexOS" */}
               View
             </Link>
           </div>

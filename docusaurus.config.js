@@ -134,7 +134,7 @@ const config = {
         items: [
           {
             to: 'emexOS',
-            label: 'emexOS',
+            label: 'emexOS/docs', // Revert this to 'emexOS'
             position: 'left',
           },
           {
