@@ -27,6 +27,7 @@ find "$HOME/emexlabs" -type d -exec chmod 755 {} \;
 find "$HOME/emexlabs" -type f -exec chmod 644 {} \;
 EOF
 
+# Bootstrap compairison
 set +e
 ssh "$1" /bin/sh <<'EOF'
 diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
@@ -52,9 +53,11 @@ if [ $bootstrap_diff -ne 0 ]; then
 fi
 
 ssh "$1" /bin/sh <<'EOF'
+# Deployment
 mv --exchange -T "$HOME/emexlabs" "/var/www/emexlabs"
 printf "\n\033[32;1mDeployed successfully!\033[0m\n"
 
+# Backup creation
 mkdir -p "$HOME/backups"
 backup_timestamp=$(date +%Y%m%d_%H%M%S)
 backup_path="backups/website-${backup_timestamp}"
