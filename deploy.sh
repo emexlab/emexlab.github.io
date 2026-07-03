@@ -25,7 +25,9 @@ ssh "$1" /bin/sh <<'EOF'
 set -e
 find "$HOME/emexlabs" -type d -exec chmod 755 {} \;
 find "$HOME/emexlabs" -type f -exec chmod 644 {} \;
-if ! diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1; then
+if diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1; then
+    :
+else
     if [ $? -eq 1 ]; then
         printf "Bootstrap is different! Replace it? [y/N] "
     else
@@ -38,6 +40,8 @@ if ! diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/nul
     esac
 fi
 mv --exchange -T "$HOME/emexlabs" "/var/www/emexlabs"
+printf "\n\033[32;1mDeployed successfully!\033[0m\n"
+
 mkdir -p "$HOME/backups"
 backup_timestamp=$(date +%Y%m%d_%H%M%S)
 backup_path="backups/website-${backup_timestamp}"
@@ -47,6 +51,5 @@ while [ -e "$HOME/$backup_path" ]; do
     backup_path="backups/website-${backup_timestamp}-$i"
 done
 mv "$HOME/emexlabs" "$HOME/$backup_path"
+printf "\n\033[33;1mBackup successful!\033[0m\n"
 EOF
-
-printf "\n\033[32;1mDeployed successfully!\033[0m\n"
