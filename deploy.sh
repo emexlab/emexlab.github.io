@@ -25,8 +25,13 @@ ssh "$1" /bin/sh <<'EOF'
 set -e
 find "$HOME/emexlabs" -type d -exec chmod 755 {} \;
 find "$HOME/emexlabs" -type f -exec chmod 644 {} \;
+EOF
+
 set +e
+ssh "$1" /bin/sh <<'EOF'
 diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
+exit $?
+EOF
 bootstrap_diff=$?
 set -e
 if [ $bootstrap_diff -ne 0 ]; then
@@ -35,12 +40,18 @@ if [ $bootstrap_diff -ne 0 ]; then
     else
         printf "Bootstrap check failed! Continue anyway? [y/N] "
     fi
+    if [ ! -t 0 ]; then
+        echo "No stdin. Exiting." >&2
+        exit 2
+    fi
     read -r response
     case "$response" in
         [yY][eE][sS]|[yY]) ;;
         *) exit 1 ;;
     esac
 fi
+
+ssh "$1" /bin/sh <<'EOF'
 mv --exchange -T "$HOME/emexlabs" "/var/www/emexlabs"
 printf "\n\033[32;1mDeployed successfully!\033[0m\n"
 
