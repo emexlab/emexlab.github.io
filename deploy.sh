@@ -25,10 +25,12 @@ ssh "$1" /bin/sh <<'EOF'
 set -e
 find "$HOME/emexlabs" -type d -exec chmod 755 {} \;
 find "$HOME/emexlabs" -type f -exec chmod 644 {} \;
-if diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1; then
-    :
-else
-    if [ $? -eq 1 ]; then
+set +e
+diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
+bootstrap_diff=$?
+set -e
+if [ $bootstrap_diff -ne 0 ]; then
+    if [ $bootstrap_diff -eq 1 ]; then
         printf "Bootstrap is different! Replace it? [y/N] "
     else
         printf "Bootstrap check failed! Continue anyway? [y/N] "
