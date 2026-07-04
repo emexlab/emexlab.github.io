@@ -85,8 +85,8 @@ const config = {
         id: 'emexLabs',
         path: 'blog',
         routeBasePath: 'blog',
-        blogTitle: 'News',
-        blogDescription: 'News about all projects of emexLabs and their development progress.',
+        blogTitle: 'EmexBlog',
+        blogDescription: 'Blog about emexLabs and all of it\'s projects',
         showReadingTime: true,
         feedOptions: {
           type: ['rss', 'atom'],
@@ -131,7 +131,7 @@ const config = {
           },
           {
             to: 'blog',
-            label: 'News',
+            label: 'Blog',
             position: 'left',
           },
           /*{
@@ -185,8 +185,8 @@ const config = {
             title: 'Socials & Contact',
             items: [
               {
-                label: 'X (formerly Twitter)',
-                href: 'https://x.com/emexlabs',
+                label: 'Reddit',
+                href: 'https://www.reddit.com/u/emexLabs',
               },
               {
                 label: 'YouTube',
@@ -195,6 +195,23 @@ const config = {
               {
                 label: 'Email',
                 href: 'mailto:lucavmu@emexlab.de',
+              },
+            ],
+          },
+          {
+            title: 'News',
+            items: [
+              {
+                label: 'Blog',
+                to: 'blog',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/Cbeg3gJzC7',
+              },
+              {
+                label: 'X (formerly Twitter)',
+                href: 'https://x.com/emexlabs',
               },
             ],
           },
