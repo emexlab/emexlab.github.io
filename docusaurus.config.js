@@ -58,24 +58,6 @@ const config = {
       },
     ],
     [
-      '@docusaurus/plugin-content-blog',
-      {
-        id: 'emexOS',
-        path: 'emexOS/blog',
-        routeBasePath: 'emexOS/blog',
-        blogTitle: 'emexOS News',
-        blogDescription: 'News about emexOS and its development progress.',
-        showReadingTime: true,
-        feedOptions: {
-          type: ['rss', 'atom'],
-          xslt: true,
-        },
-        onInlineTags: 'warn',
-        onInlineAuthors: 'warn',
-        onUntruncatedBlogPosts: 'warn',
-      },
-    ],
-    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'emexDE',
@@ -87,24 +69,6 @@ const config = {
       },
     ],
     [
-      '@docusaurus/plugin-content-blog',
-      {
-        id: 'emexDE',
-        path: 'emexDE/blog',
-        routeBasePath: 'emexDE/blog',
-        blogTitle: 'emexDE News',
-        blogDescription: 'News about emexDE and its development progress.',
-        showReadingTime: true,
-        feedOptions: {
-          type: ['rss', 'atom'],
-          xslt: true,
-        },
-        onInlineTags: 'warn',
-        onInlineAuthors: 'warn',
-        onUntruncatedBlogPosts: 'warn',
-      },
-    ],
-    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'emex64',
@@ -113,6 +77,24 @@ const config = {
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl:
           'https://github.com/emexlab/emexlab.github.io/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'emexLabs',
+        path: 'blog',
+        routeBasePath: 'blog',
+        blogTitle: 'News',
+        blogDescription: 'News about all projects of emexLabs and their development progress.',
+        showReadingTime: true,
+        feedOptions: {
+          type: ['rss', 'atom'],
+          xslt: true,
+        },
+        onInlineTags: 'warn',
+        onInlineAuthors: 'warn',
+        onUntruncatedBlogPosts: 'warn',
       },
     ],
   ],
@@ -145,6 +127,11 @@ const config = {
           {
             to: 'emex64/docs',
             label: 'emex64',
+            position: 'left',
+          },
+          {
+            to: 'blog',
+            label: 'News',
             position: 'left',
           },
           /*{

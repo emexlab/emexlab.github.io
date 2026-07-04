@@ -1,6 +1,6 @@
 lucavmu:
   name: LucaVmu
-  title: Website Maintainer and Manager
+  title: Website maintainer & organization manager
   image_url: https://github.com/lucaVmu.png
   page: true
   socials:
@@ -8,20 +8,9 @@ lucavmu:
     github: LucaVmu
     email: lucavmu@emexlab.de
 
-catelyn:
-  name: Catelyn
-  title: Maintainer
-  image_url: https://github.com/mimalloc.png
-  page:
-    permalink: mimalloc
-  socials:
-    x: mimallocly
-    github: mimalloc
-    email: mimalloc@emexlab.de
-
 emex:
   name: emex
-  title: Organization Manager
+  title: Owner/Maintainer of emexOS & organization manager
   image_url: https://github.com/emexos.png
   page: true
   socials:
@@ -31,7 +20,7 @@ emex:
 
 nyxia:
   name: Nyxia
-  title: Retired Maintainer
+  title: Owner/Maintainer of emexDE, emex64 and emexMC
   image_url: https://github.com/mach-port-t.png
   page:
     permalink: '/mach-port-t'

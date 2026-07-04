@@ -1,0 +1,19 @@
+emexos:
+  label: emexOS
+  permalink: /emexOS
+  description: News about emexOS
+
+emexde:
+  label: emexDE
+  permalink: /emexDE
+  description: News about emexDE
+
+emex64:
+  label: emex64
+  permalink: /emex64
+  description: News about emex64
+
+emexmc:
+  label: emexMC
+  permalink: /emexMC
+  description: News about emexMC
