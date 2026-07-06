@@ -38,13 +38,6 @@ export default function Home() {
                       -== minimalistic x86-64 OS built from the ground up ==-
                   </p>
                   </div>*/}
-              <div className="theme-toggle-wrapper">
-                  <button id="themeToggle" className="theme-toggle">
-                  <span className="theme-icon">
-                  <img src="../gen/icons/light/moon.svg" alt=" " />
-                  </span>
-                  </button>
-              </div>
               <div className="div1">
                   <div className="firstwrapper">
                     <div className="first-image">
@@ -56,10 +49,7 @@ export default function Home() {
                           <a href="https://github.com/emexos/emexOS1">emexOS</a>
                           is a graphical, from scratch operating system written
                           entirely in
-                          <a
-                              href="https://en.wikipedia.org/wiki/C_(programming_language)"
-                              >C</a
-                              >
+                          <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>
                           by <a href="https://github.com/Voxi0">Voxi0</a>,
                           <a href="https://github.com/tsaraki">tsaraki</a>,
                           <a href="https://github.com/emexos">emex</a>.
