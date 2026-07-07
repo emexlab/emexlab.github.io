@@ -34,17 +34,28 @@
   accent-color: var(--ifm-color-primary) !important;
 }
 
+img {
+  object-fit: contain;
+}
+
+.markdown img {
+  border-radius: 0.5rem;
+}
+
 .rounded {
   border-radius: 20%;
 }
 
-.horizontal-row {
+.horizontal-scroll {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 1rem;
 }
 
-.horizontal-row * {
-  min-width: 0;
+.horizontal-scroll > * {
+  max-height: 20rem;
+  flex-shrink: 0;
 }
 
 .sectionsRow {
