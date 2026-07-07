@@ -1,21 +1,226 @@
 {
-  "name": "emexDE (moved!)",
-  "identifier": "com.emexde.moved",
-  "subtitle": "",
-  "iconURL": "https://emexlabs.org/emexDE/img/icon/light.png",
-  "website": "https://stikstore.app/altdirect/?url=https://emexlabs.org/emexDE/apps.json&exclude=livecontainer",
-  "tintColor": "#f00",
-  "featuredApps": [],
-  "apps": [],
+  "name": "emexLabs",
+  "identifier": "com.emexlabs.source",
+  "subtitle": "Unfolding the power of programming",
+  "description": "At emexLabs, we build software that gives you full control of your device, designed to work fully offline without relying on cloud services, and running entirely locally.",
+  "iconURL": "https://emexlabs.org/favicon/web-app-manifest-512x512.png",
+  "website": "https://emexlabs.org/", 
+  "tintColor": "#000",
+  "featuredApps": [
+    "com.cr4zy.nyxian"
+  ],
+  "apps": [
+    {
+      "name": "emexDE",
+      "bundleIdentifier": "com.cr4zy.nyxian",
+      "developerName": "emexLabs",
+      "subtitle": "IDE to develop native code iOS apps and tools on unjailbroken iOS",
+      "localizedDescription": "emexDE is an iOS app that empowers developers with a full toolchain they can use while even being offline for iOS development on iPhone. It supports Swift, C, Objective-C, C++ and Objective-C++. It’s a powerful Xcode alternative that made the impossible possible, a fully on-device iOS IDE that doesn’t even need a cloud and can even be used with airplane mode enabled. It supports officially iOS 16 all the way up to the latest iOS version(iOS/iPadOS 26.5 tested). You can compile and run iOS apps on the go with ease, using the entire iOS 26.4 SDK.",
+      "iconURL": "https://emexlabs.org/emexDE/img/icon/light.png",
+      "tintColor": "#fff",
+      "category": "developer",
+      "screenshots": {
+        "iphone": [],
+        "ipad": [
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/1.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/2.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/3.png",
+            "width": 2360,
+            "height": 1640
+          }
+        ]
+      },
+      "versions": [
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.10.3/emexDE.ipa",
+          "size": 105968899,
+          "version": "0.10.3",
+          "buildVersion": "20260523.28.RELEASE",
+          "date": "2026-05-23T06:32:52Z",
+          "localizedDescription": "## Changelog\r\n## emexDE\r\n- better sheet dismissal detection (da744a2573159629d5fcd79226b371bd644e236e)\r\n- updated to swift 6.3.2 (b5f527616ae6442a686fcfb88b392e6b7368213e, 9c44afb0731667d23da2bb00b80c93fa1beb72b3)\r\n- updated to iPhoneOS26.5.sdk (eb30c07a84fa504a01611c4f0c5ed7fbe10f2531)\r\n- rewritten more UI in Swift UIKit (24246c5608395318785e2cb6f2888bb4f82df58c)\r\n- other UI improvements (8fa8d1d882893e6830b94411b6abc8a9fad0a31a, 942fa702e41193fdd159f8514ae5c8bb63baec83, ee2ad3bec626fde0ef6e1a4495689380d1d65fa6, d9782931e492a602e35abb826e54a73484e3c8ff, cece9c7bb20a07f305df8200a40f33aae56d6353, 512a468ed5964a2dff94df96582551476409ebc7)\r\n- fix: weird window server glitches (fa81b3c97f45c07af205552b911a7a681c076442, d09e0528a841c4fcad0b8cb8c031c02f30ba6085)\r\n- fix: actually present windows on iOS 26 (cece9c7bb20a07f305df8200a40f33aae56d6353)\r\n- feature: build projects for iOS versions newer than host version(only exporting product) (99a1e9cc64130ce6668858cce4bed7733f35c573)\r\n- feature: added cache browsing feature to projects (3b133c77ff3cc2253c24ecb67542e3ad221bd073)\r\n- feature: slightly better project creation popup (c6f95d3950a6c4c79331ab7cf83151b171ef475d, 11e5bc78a5982d7aa3f97de2f16de2579e69d0a8)",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.10.2/emexDE.ipa",
+          "size": 105053477,
+          "version": "0.10.2",
+          "buildVersion": "20260518.9.RELEASE",
+          "date": "2026-05-17T19:39:11Z",
+          "localizedDescription": "## Changelog\r\n## emexDE\r\n- fixed project GUI (c937bba253648b7f80ff10845c5cfe1259eb3672)\r\n- updated credits (0dcfc06a2dc6438384090da38255304bdb6ecc98, 439915ba50cab8120fa8b8a1ec2f227c0c87d89a, 6229a0dba63d3b2b1df4914bfb922d2482dd03c4)\r\n- emexDE rebranding (45b2f30a88793ab1f2ad2ec2fded78f69c32ba73, 5573ce8139adf905d74315aeef679ea75dd6571a, d464ed10e60f84f2f7274a4efdd88cd697e8dcef, 56e554fa9cbc87f5fb6a270a1e2ab5b449c925be, ed85577f9a5c9aad3d3167b07dde27449e2c61f6, 271633e69824678cfcec750b40a7f7628e2111a5)\r\n- fixed issues with window state management (012b5d4f58c9cebe0da708d1bff4e30b382ecde2, 6f97cbbc4e9c83ceea059ae7565bf98c3cd309df, e11733ba0e40716a7f382bc5c17e545d54cf8daa, 972cf1c1447def70a5fb117219dc7db57ea8ee5c, 9dd1f0e18a53c856f245a75dff3cc3ec73b45010, 9b4e25d8d8b5bc8e3662c7abcfd0104ddffcda3d)\r\n\r\n## ksurface (pre-rebrand)\r\n- vulnerability fix: heap buffer overflow in archo Zsign, discovered by @orbisai0security (00975c47e89089e46ad278ca1c88dfd4ba4ab39d)\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of emexDE is iPhoneOS26.4\r\n\r\nThanks to contributions from @orbisai0security, @LucaVmu, @L0tsen and @mimalloc",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.10.1/nyxian.ipa",
+          "size": 105262232,
+          "version": "0.10.1",
+          "buildVersion": "20260515.55.US.frida",
+          "date": "2026-05-15T07:04:54Z",
+          "localizedDescription": "## Changelog\r\n## Nyxian\r\n- fix: creating SwiftUI project correctly by generating info.plist key's in SwiftUI interface projects (lol, blame me) (98710fa)\r\n\r\n\u003E [!NOTE]\r\n\u003E This is a emergency patch created because of serious bugs.\r\n\r\n\u003E [!NOTE]\r\n\u003E Standard SDK used in this version of Nyxian is iPhoneOS26.4\r\n\r\n\u003E [!WARNING]\r\n\u003E Jailbreak and trollstore support might be broken in this first release. In the case you wanna use them, don't downgrade, make sure to backup all app data and then upgrade.",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.10.0/nyxian.ipa",
+          "size": 105262423,
+          "version": "0.10.0",
+          "buildVersion": "20260515.52.US.frida",
+          "date": "2026-05-15T06:19:54Z",
+          "localizedDescription": "# Changelog\r\n## Nyxian\r\n- feature: added Swift 6.3.1!!!\r\n- feature: autosaving of files (62f99a753061b6a42728f453baf83b84507f7f1f, 4bbcbdb60bac40f1ffc7f84c144babb57818b723, 0be6e7c0dcf5a1857381b177b065304877bc79a3, 5e00ecec9e1f6fdd03ff8462f5cd0690875113d3, 17dcc379a0789fe9d98bac9055615eab88dec105, 7a85d33e601c11242ba99d4053a2c12aa1a2d80a)\r\n- feature: added NXOSVersion for better checks (5757f67dfe7a061f3ae5c39b6f2f7565dfe4ac8a, 200493de00ea4b8d25f5b0d54e621d6786e7d72d, 03ff0beb810abdf486e22dd1d3842157e8c4148c, d588d6a789eafe7f66e5610fe053d428ce3970d1, f94cf175798a68eaf55a90d086ed7a583c1234eb, 0b10e6319e5ca7a9bf06066e1c71b61f71f74ba7)\r\n- feature: added UI Onboarding (e1d50d13a77ae14ce0193edc69866b372e3a7c4b)\r\n- fix: calculate keyboard height correctly in code editor (7a0cb6bf8f85217d55c5fa88f793070ed947f8ea, 690dd2245afc0119d9570a3f4a7b24e789fde0cc, 690dd2245afc0119d9570a3f4a7b24e789fde0cc)\r\n- fix: using LLVM's crash recovery context for safe LLD usage (72fdc0021252ccf742bfc1072f8b63d666874699)\r\n- fix: better threading (cbc0033f48d4a8144728742198470c53cd15fbaa)\r\n- fix: don't force load every file thrown at the CodeEditor (5063e712e8d7fe717d36f6f603a049152f369a1d)\r\n- fix: don't delete the path extension when generating object file paths (72b4d841bf24e5e6087c5eab8c3606a60a7cef83)\r\n- performance: only reload project's variables once (9575b2bf83b9f1a12d92a55f8b21dc774941b734, 7764602973de2dc661f337bfd3dc133984a89809)\r\n- feature: take supported deployment targets straight from SDK (9575b2bf83b9f1a12d92a55f8b21dc774941b734)\r\n- feature: redesigned project creation experience\r\n- feature: added buttons to clear project and swift module cache (eb0a5f77a0995c14d4f85e0f616bcf126acc043a)\r\n\r\n## Kernel Virtualization Layer (ksurface)\r\n- vulnerability fix: removed a code signature bypass from inbuilt installd (1cb57a141bb70fc0d7fccd0f4c0c0dc79e119551)\r\n- vulnerability fix: patched a deadlock in `SYS_sysctl` (16e667a6a34164d462de069203c89c704aa27e44)\r\n- vulnerability fix: patched information disclosure vulnerability from permission over pid check (471e2ee84c4c575a3671d51f891d7a9211ecb6e3)\r\n- vulnerability fix: patched a race condition in PEProcessManager (memory corruption) (111f56656241be75d9d341ca44ceb68a917e2bd2)\r\n- vulnerability fix: patched a resource exhaustion vector regarding FBProcessManager (5b08d63ec255931c024dab299bb981f908eb0590)\r\n- vulnerability fix: added forgotten cleanup path in PEProcess (a0cdd40a56d81911610a5369c6dd4031a0c71783)\r\n- vulnerability fix: patched a use-after-free caused by a reference underflow (b6e1011e50d345e24e66151ee59772560ed42660)\r\n- vulnerability fix: patched a lenient memory corruption vulnerability (845fa60d02bb87ed43793d8dc335fe3a5f5bd2b4)\r\n- vulnerability fix: patched a use-after-free in kvobject allocation API (1fe578d672a79b174bdbceb11e1ed5d4e76bd3a1)\r\n- vulnerability fix: patched a memory leak in process list API (09c423c5d2f2b050f26bc25b3b1daa86001bfef9)\r\n- vulnerability fix: handling EAGAIN on rdlock's (e592fc08e30b14baf5453e766e978bc3e585187d)\r\n- vulnerability fix: patched buffer overflow in `SYS_handoffep` found by @zipgod24 (ebd6c2881f205caddf31d051cbbe22c9e3d0fcf7)\r\n- vulnerability fix: patched use-after-free in `proc_zombify(1)` found by @zipgod24 (4337d89c55abfa737efae4182836ad6e653c8e3b)\r\n- vulnerability fix: patched a severe buffer over-read leading to information disclosure (ef6fb7c45844a566251637a1bc56021c03619432)\r\n- vulnerability fix: patched ksurface termination vulnerability (1deeccb738ab89ad11f36946d82cd11168e461e9)\r\n- vulnerability fix: patched a OOB vulnerability in ZSign by @orbisai0security (c8786557086ab811bd6356186eab91f5aeadf2a5)\r\n- feature: using FBProcess for process state change handling (9d00fb1de0e389481544fc6ec68266aa9827dfb2)\r\n- performance: faster MachOObject (f37c7c6857fc90b87f34ec58d3da2483cc79f55a, cc0ac371f26fb181b92a2c72b65c4bf77c788c09, 5097f01caaa2863c09410d8da0d532f0925ae0a8, c4612ceb7682739fbcfefd5a1472e8719f5370ee, b03e161d30f0a78d15358cdd1fac4192aa088051)\r\n- performance: faster write in and out in FDObject (4d42ed5d790c188051a8dbf37194b8716e8849a0)\r\n- performance: slightly faster PEProcessManager (fbc9911b34a4d6394f07bfae1737e53f74159364)\r\n- performance: using faster NSExtension invocation method (b1dd4d78cd70754484886f590b5c9a6070bf25bf, 61e3c1dbff32b591476e48c8d654b4804227330f, 21939afc3893cf884231b1699844116c7db94c6e)\r\n- performance: removed redundant delay in PELaunchService (6731ed79702f75f170fb19e77461199f7e139fd7)\r\n- performance: made object allocation slightly faster (f325e0cf608587db6ecbfb1daa9b8072ec4fee9c)\r\n- hardening: removed PEEntitlementProcessElevate from some presets (6a335611b506113f867a11d4c6210bd260236fb4)\r\n- fix: disabled darwinbg simulation cuz apple might just freeze parts of iOS for what ever reason (ae26edbece9ca0a38ba920f94c54de5165976d00)\r\n\r\n\u003E [!NOTE]\r\n\u003E standard SDK used in this version of Nyxian is iPhoneOS26.4\r\n\r\n\u003E [!WARNING]\r\n\u003E Jailbreak and trollstore support might be broken in this first release. In the case you wanna use them, don't downgrade, make sure to backup all app data and then upgrade.",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.9.1/nyxian.ipa",
+          "size": 70680974,
+          "version": "0.9.1",
+          "buildVersion": "20260404.2.US.runner",
+          "date": "2026-04-04T23:08:16Z",
+          "localizedDescription": "# Changelog\r\n## Nyxian\r\n- Theming patches (1cc4c63d09a0648a5356c90d0e22837f14d9b186)\r\n- fixed objc utility generation (bff7e4d0a1f60ac97cd981aaf9ee03c2869afa8a)\r\n- fixed window handling on iPhone (ded2d5c29b4d3dc0b34ca57f44e0b6e5b4674bfb)\r\n- rethought application install (c87a607ed2c747fae3cc57cea5c95ad480f256c3, dc5cb0379ea08b2801c7ffaf0df15e0d3da42070, 1ee59d120148cc4eb4be1e4d7c97cc422ea2e6d3, c205dc236d1209a951cd187b0ee2f52cffdd2856, be12d71c08d40d6d1fbbf12d8a5453c6140938cf, b2297470239ebd6a90e36662bd38438dafde6cf4, f35d83be62ec4ba0eb081039726ad25775e6bac3, 7d047003d4875a77505601c5f988d92eb0e51f0d, 2aeb1381ba015c8f0cf9c52dd81f5a14bef28d4e, 7ee7cbefc5b97655189b38677f3a42daa4d8e292, 6cda7de5eb4b323249d739c05b3403cb71d0a0e8, f73b0bdad3c7324190b35fc8383494f4ece28f86)\r\n- fixed write access in SDK paths in file manager (ad2450e01ff615a00bb341c96218fe90c968bba5)\r\n- fixed issue navigator on iPhone (e75c170772104547525a25b10ad2f786256d6f93)\r\n- patched DOS in zip extraction (695e37ed3cd5e47cf3554396e0dabee80a0e5eb5)\r\n- corrected some appearance issues with GUI project configurator (a3b22fa8e7b28e0ac20ea5609bdfe266968b0373, fb619f5f5c536ec95325b4e8f147831a0c530786, 6e6471aeb5014d877b55035904feea8c2728563a, c57ef22fa53a15b2a4bd002f8c7c14b19e1b97fd)\r\n- improved dependency scan performance (d5f9fe71353ca41ae7cc97bf87a8ae3e0c42a3f7)\r\n- fixed window double close bug on iPadOS (344524e99222d4df83c23cf796b4cdb55c0215cd)\r\n## Kernel Virtualization Layer (ksurface)\r\n- Improved entitlement patching to Applications menu (8cb891dd3395b5dde279e102135d86b19d75e976, 8e16df8a179ef1ef5e173f290b5604ae2214f22c, e4efbcf7c1d24e42b18d4971a3fe3425f127614d)\r\n- PEObject patches (a20eae5da97b97b1a6150909833f94b30dfc2842)\r\n- Radix tree patches (ddfce454e9674b79f70e9c6bd679e143fb31aa1f)\r\n- Vulnerability fix: unexpected system termination due to null ptr deref (d9d2c9321b8be6bde482f78f1abb67d383ee7c93)\r\n- Vulnerability fix: improper cleanup path in tty initialization leading to a use-after-free (6ce364889adb53ccba19236fe782acefc023f379)\r\n- Vulnerability fix: improper action order in tty deinitilization leading to a race condition (8ae5e4d513129a3f6cfdfe12c87df8022b07fa3f)\r\n- Resource leak fix: resource exhaustion due to improper cleanup (c5b100443d4683d83c5efaa7d87a7c66678c68ec)\r\n- Improvement: added PEEntitlementPlatformRoot (926a259e9dc48d94473e007c4adb09c7e47a0199, 1d536641508a652c58e746c4b8fb1711e4b8fbbd, 3226ee6b16e44800d749b0e5d713fd1f731e1cde)\r\n- Improvement: better trust and entitlement code (9c1cf66a03691939d8b3099f363585ef2106d833, 766434a22dc0141178c17c3634224cd23dde876a, b5fe7975a2eaf3b699a7eaef979bef0c91a0fea9)\r\n- Security hardening: nerfing capability of root user process to automatically be able to enumerate processes (ad4a9e63dd96e00dbaa1853e255465b70aeeeeeb)\r\n- Bug fix: use correct path for the CFPrefsPlistSource hook (990bc47a3c33867c83f5f025280837b3c9af39c5)\r\n## nxtool (resign trollstore apps on macOS to nyxian apps, basically embed nyxian entitlements into ipa's)\r\n- initial release",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.9/nyxian.ipa",
+          "size": 70672861,
+          "version": "0.9.0",
+          "buildVersion": "20260331.2.US.runner",
+          "date": "2026-04-01T00:30:13Z",
+          "localizedDescription": "# Changelog\r\n\r\n## Nyxian\r\n- Improved logic in Issue Navigator (d3e852224f53d260b5c53bee67cccab380aa92c3)\r\n- Added GUI project configuration (d1fe1f29512dcf1c58c130ad54c190948456d198, a7e9da21a2b12a8ab468adaaddf14a1d74ee6586, d98b16b600a4e708a5e38d0f471dd8a0880079ba, c784014c7f79570d9663a9bdb6358f904fff05c0, c120fb8b694b1debb2b2a0879be087a0d8a9c1e3)\r\n- Updated SDK to iPhoneOS26.4 (751e2f12ba4b1bc235662ceb934deb45dc28c5a1)\r\n- Bug fix: fixed barbutton items not theming on iOS 26 (47eb2a8ee3b9513f4ae726fb702e5cf261522bac, e026fc3b4ce4b1d3584ff5dc5825b66e6c78e979)\r\n- Bug fix: touch inputs not getting delivered to NXTerminalWindowSession properly (62aa2f6aa8cf8c5ce9d4b7c4d03f300f5bb99e12)\r\n- Bug fix: window focus refix (4f4cc1a044a5c42f0eb8f05aac5009e3f0ea834f)\r\n- WindowServer v4 introduction\r\n- Added \"Jump to definition\" in code editor (026ec8d4bf2ad757fa9650f324e263a52dbd0460, 5500bc96be11d51423b67ab70bbda0c333b16abe, 5384079c952def2ff448ecad64c3040b3f929bab, b98f2f2c8565ff94b65b851b02b466a3fb411750)\r\n- Using LLVM's dependency scanner for better accuracy for incremental builds (fdb4d5ae723979ddf2c0f97cdf699e709826821a)\r\n- Other minor optimizations\r\n\r\n## Ksurface\r\n- Syscall server improvements (better performance) (4d5d37f89d5010362a5515c25e31a6ea23e39af5, 3a55079f747355f5d6b62d83701c5c1cdb05aef1, 2ba098c48165027b264bd3f4fbf1ad299ec5a86e)\r\n- Fixed vulnerability: critical type size mismatch of `PEEntitlement` (7d7ae3e2fbab1a48812e445e6158fe70588be59b)\r\n- Fixed vulnerability: null pointer dereference in `SYS_handoffep` (72220c4386d798c72aac3efba364bced521ebae3)\r\n- Fixed vulnerability: missing break label in `SYS_ioctl` (d1a0e2c1f5be78f8b1bda79aae178f1f41c24fd3)\r\n- Fixed vulnerability: semantical mismatch of syscalls `sys_task_` (58f51c54185a1d43026ea4a7e6ce3dc227501156)\r\n- Fixed vulnerability: memory corruption in `proc_copy_for_proc(2)` (95fbe1458d4bc7f49eab918f3467e66d80eff6fa) (already replaced API with kvobject(stands for kernel virtualized object))\r\n- Fixed vulnerability: dangling mach port reference created by `SYS_gettask` (6432e95ad3484d42364c2bbbfabc6fa9c709bb2f, c0b69f10fa2295460477858fcd05e69661ce95c6)\r\n- Fixed vulnerability: DOS in `SYS_gettask` (d6ab6093252e745251ca3c48bc50fa3308b83420)\r\n- Fixed vulnerability: object leak on `ENOSYS` path in syscall server (259a39f697c8bf64c5afaf84754bf808e88c979c)\r\n- Fixed vulnerability: null pointer deref may happen in proc list api (4dc1e69efda8e743a4f0475aa365e04b93207f8d)\r\n- Fixed vulnerability: flavour confusion in proc list api (25cec7c942e57c952e334ee1e84685608f61ea10)\r\n- Fixed vulnerability: race condition in `SYS_procpath` (af259e22ff260a3bcb1e0ce97ba3563c1bc2adc1)\r\n- Fixed vulnerability: privilege escalation in `SYS_gettask` (2dfc66e07228b93b59e9bf854afd3273d3b092b8)\r\n- Fixed vulnerability: race condition in proc copy api (33cc1b50b112dbecbc571685523275cc139a47e8) (already replaced API with kvobject(stands for kernel virtualized object))\r\n- Fixed vulnerability: missing unlock path of proc table in proc api  (7e349d52242dd996403db9895c8e3afc4fa370da)\r\n- Fixed vulnerability: use-after-free in proc lookup api (cffd6a36606faf39741cffdcebbddbdab6e062c9)\r\n- Fixed vulnerability: privilege escalation in `proc_permitive_over_pid(5)` (f373680e5541c922cdea750bf9cfe87aa69682e6, c392b2aaaf273308d542decbb7e8ef11d1644260)\r\n- Fixed resource leak: file descriptor leak in `SYS_signexec` (d1a0e2c1f5be78f8b1bda79aae178f1f41c24fd3)\r\n- Fixed resource leak: mach ports leak in syscall server (21e762c713b1f2fd2286f5c86ee59d553e78cbd3)\r\n- Fixed resource leak: entire mach messages of syscall server (67871da11f6966c2831980b18cc2ff0bceac9ddd, 7ae16ad54eb2e000d76f3ee479ae65ef9889dc9b)\r\n- Bug fix: fixing the iOS 26.4+ crash (4b21e76e6b6460ac7ac01db56f8282a188ea5a9c, 565ed891c08fff3324fddc2ac8f957e7c769861d)\r\n- Bug fix: utility home paths incorrectly being set (407ace19468d0981f264e459b10c6a7fe7565381)\r\n- Feature: `SYS_wait4` fix (9a0b0a48647dd73db450f47bc8c4a98c455294fc, ffb91baa43a11d3284ab87cabe8dca21bcb9ccd8, e966e0643f74560e8c61066d508745e9e32d915b, 8fae3f1937f6caeec160edca05ee81ff4b7c473b)\r\n- Feature: better panic system (for debug only) (b80dfc802e40f17761ad9dc4c2175b90fa71ef7f)\r\n- Feature: tty support(no forkpty yet) (edb70eddeb66cb4bed3213936e2f80b5e8d26540, 8d4466e33dc0acafdfd805808665d61d89a27e7e, 07eba8ce0e4bd75bbad892967d31f35986dbb03a, de3c5cffa465fedb0b4995fe386ae6c9bb76cc5f, 8d89c99aa2633334a3d87a904c35e6ed762daf14, 5ed7894507e49864640869624c0a288bd67027be, 6c83b819724c2402b41e03c1365581b5d97c536e, 1081cd553dcc7d405523f5fd201a7062ed84be26, 3af601a48b7a43d31ffde2ebd4bed335f59c7a2e, 706796ad80cd37c34996aa257b323b1bc02f47ef, 58fe7dff90d5d23adb584bb1f1e1b786822993bd, fa052ef4faad3c1c66e9335421bfe8c8a5bef528, 1cf242bfba54facc337c2bb976088da1fe47d710, 1cf242bfba54facc337c2bb976088da1fe47d710, 69596047a98c86acff772c8732112e185712027c)\r\n- Feature: `SYS_setent` syscalls to drop entitlements (b7d96f8b43a5890440593afee153b1d493ad1cd0, a514fb80b7445504b78689a9bac97cbfc72c7402)\r\n- Feature: new cryptographic code signing (507e8289c28619d8898e9334c7ebc57b01a1b291)\r\n- Feature: process zombification (19e831cd33c4073388da966667984477c99d98d8)\r\n- Improvement: better ksurface init (b8d76deeb9b52a87656b18d120b25b9168cba581)\r\n- Improvement: validating entitlements now on host side and replaced `ksurfaced` with `containerd` (3cee76677bc93af3b7cff610da455f5fc7fbd9e8)\r\n- Improvement: Daemon crashes wont cause deadlocks anymore (f69d208b3e802190bf15363ff17036619d79b6a7, d4abbf188730e45a3c164baa8adc83059d310b88)\r\n- Improvement: Added brand new kernel object api aka kvobject (29addf50afbc02f12a028b6b70abf0a97bf91e33, 5cddfe11f3cec4bbe97ed5386ffc4cd8bc65686a, b75064442e3500b1b276ba35b5400ba5b7fde1cd, 0cd2d5665fcefc6c23de0c5a82ad84745638ab22, d70151a797cc7f952647eb951929312669f5841a, f458091330dce364eb2e0ba428dc87e5e4c91d91, 4ee265dcdaa1ce6772a4380ede1e4476c8efa8cd, ca735b8bc854ba5eab1dd140404889b225bb233c, 09b45f23484a85b0ae2a47d08a81714773fe8860, eeef5fe85ac70f201a85ce7b54bef0fb2a505913, 632fc87b7e8e7a48d0e37ce46a78262dfcd189fd, 673ce9e658e968baa820e51f48aa8e3276d8a504, 47c3ae019a417eb48c92a04dacc8d73176f487b6, 21b98d9d1615b1d5334475e21e6f828b80582931, ebbaac70ba5cd586b232a16dc43d356a12241bcf, e309858cf5094f5e909dfc5fd8348f8b358e16c1, 94c907a7cdad6a30c6f2fd7cf7abdee99668cd2d, ecf0c29d09eb63bca4b2f726efaea6f2ac26f13f, 5054f9888584b28759a8b8b5decf2ba891b71d1c, b5f5c148231d969b2bcd488e8e503d76a8161f2d, c3a6a76ecc9a26c9c1bdb7ce7d3d8404d28e8100, cf0859809c77bcb49708d4fa365916ccdcb9b380)\r\n- Improvement: Now tfp works on all iOS versions (b6c9ee65bb63784a0d057332a44c39198f2f1a75, 4e9f0d1e2be5073964615a1988d76b1912149619, aa54ed96a164706971805c8715bfc80e7bfbe226, d9224e3b97e502afec8aa6894ae3d6c7231d7c25, fcfbc61b860066000fdc817bcbfe3fc75913dce7, 7f3d93a3c9206bd3e34cdb5acf0ef08b0e9d53d8, 4f4affe601dc15d665aae16fa3fd147b6b6ebc76, ffeb5da2353c372613953be1017f07bed320355f, c44c08780b1569f0e69fffe2db982b1a89113a59, 5c7487480adcd22158de208d097a76e38aae3767, c0bede51d52491f146236e5af68c76972bda619a, f9891521bb25964de2a7680d51c4fc326cc1268d, b1b47fa26d3f968ea6d1d68014e44ad16cc72ed1, 7062e710fcd390a18223f14f72fb9c54267807dc, 4ebf18b16e5dac285479f13ef2116ea4c33f6761, a5398d592b657d52ade3bbc408370f0e1a718b98)\r\n- Improvement: stripped and improved inefficient LC source code (25632e9f33f82594882517e65430da26e4977686, 261782ba098dedeb5ad1753e62f8c933292501f2, 3987fb84c85f992aa42fc2374d7f3eb48dd8b521, 5eb783521fc10b65fd4cdbcd4c3af7eefb9279c0, d0af2c3c8cd122dcc65048930437fd7e602b323e, d0af2c3c8cd122dcc65048930437fd7e602b323e, 6c1b83c89f6229a5d628d183540017ad390f8117, 2822f87089830ff7dea878e1df5c659381596e41, ce1933e040384c4690ef68c6cb89996fffab7011, 97be455a449f9becf1d0ffd194fa8b411375a724, c3a2d78b1b48df5bb0f798bc79bbba065b0af85e)\r\n- Improvement: now the user is warned that the NSExtension is missing if it is missing (10aae935d6274d90d287899710af43b2d4d72c2c)\r\n- Improvement: added task name support to `SYS_gettask` (11190aff3968748d915a84ee72055bc33400fc8c)\r\n- Improvement: removed restrictions from `DYLD_INSERT_LIBRARIES` (3a323048a3f88950ec378a346eb6d81517f59997)\r\n- Improvement: introducing syscall server v3 with userspace ptr support (dbf7248d15aab45666e3be1eb7a2e0834dce11bd)\r\n- Improvement: introducing 64bit radix trees (2d783776b71f8056c2a7c19d3c81242232102e63)\r\n- Improvement: replaced the fork() fix with the new vfork() fix (96cbd0fff84c32c583b11b0e2531fdf58ab41945)\r\n- Improvement: better process flag state management (ac4c8a085eb73067e4950795fb37ba59c50aca5c, 8fd6bef4512404fb3dd076e6351724601d1f06e8)\r\n- Improvement: replaced 2000 branches with memcpy for CFBundle override (aaf5c5087b485fb6876513e9ac5a03de2772f9f3, 83d93565a155511a58f770038896597136e94b88, 714b57f4f7ba11e7d3d9f086e4106598e6271c65, b08963cb3e314fc7fe6640b4a2c14aeee4d60c52)\r\n- Improvement: now exit sets the exit of the process in ksurface (edeb2074817954aa61516f4ff4c66e227b81c2e6, be53319cca097b053f1e86e0219f30dd0eadd433)\r\n- Improvement: correctly overriding NSProcessInfo (a114284f4233c757f78a18dcbaac3818ddea203f, 8d9d5912c6a83463f11f187c38118c000a62b398, 8d9d5912c6a83463f11f187c38118c000a62b398)\r\n- Improvement: hookless posix spawn file actions fix (86cf3070fa5d3f35db98165fb0b26a4e96814511, 278465bd18beba30bf61730d55e24d32bacd6466, f9af413bb67c7df58e94cbb0b9b78d75ca367404)\r\n- Improvement: forkbomb halfway fixed? (3a9eadd8cb64cc60b92c1fbeb4b7ae8b8160adcd)\r\n- Improvement: fixed crash of process when they append a file descriptor to `FDMapObject` (328a45b29da04cba31a9508ac8fcb31f7056c0ff, c0eca4b0c89e001a72fc567c899f7b75994332b3, 670753d433e2aa3c5b6ce4d4d7fdd8845a7a4726)\r\n- Improvement: return with errno in posix spawn api (814d45ca156dee491de87fd62334cb51c8948fb6)\r\n- Security hardening: stripping entitlements regardless of platformization (58d5acbae0c2bd32777bd18f25d06bbf3a79a3b1)\r\n- Security hardening: removed potential DDOS vector and validated task port flavor in `proc_task_for_proc(3)` (bf475d490784804e536e396107dfa2ab43db5caa)\r\n- Security hardening: switch to immovable receive right in syscall server (91d50f85a57846ab9cdb0c5238bd7da15b11db29)\r\n- Security herdening: limited amount of kvobject events to make sure no attacker can exhaust resources that way (2791120f989a2829d7c682c9b5ffa6b7d3b0e0f6)\r\n- Security hardening: added ipc object validation (b7bd5ed23301150d05dd3d9b0354d9d4455c6c7e)\r\n- Security hardening: added bundle validation in installd (fdf11f25b8382a4d41ff8c5a173396064db4511b)\r\n- Security hardening: made signing and running unsigned binaries slightly less likely to iOS kernel panic iPads that have the sloppy IONVME kext (353b84bcbff58cd8ed36cbec43496b308e2972ed, e7b2f78d13ba67e3084cfd042d17f2e53de35fd2)\r\n\r\n## Nyxian For Jailbreak\r\n- Bug fix: slow installation after first install (bc864bf820a883067e6a1613b3d5f8762acbebf8)\r\n- Bug fix: entitlements not applying (bc864bf820a883067e6a1613b3d5f8762acbebf8)\r\n- Bug fix: deadlock while install\r\n- Improvement: added LLVM from stock Nyxian to jailbroken so kids stop crying at me because their package manage installed the wrong version of clang, lld, etc (25793ec6342da6d4dba7c409ba8a43e6334f5c40)\r\n\r\n## Nyxian For TrollStore\r\n- Initial release\r\n\r\n> [!NOTE]\r\n> Virtual entitlement GUI-based management will be fixed in 0.9.1.\r\n> But entitlements of project builds shall not be affected by that problem!\r\n\r\n**Full Changelog**: https://github.com/ProjectNyxian/Nyxian/compare/0.8.6...0.9",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.8.6/nyxian.ipa",
+          "size": 87498780,
+          "version": "0.8.6",
+          "buildVersion": "20260207.20",
+          "date": "2026-02-07T02:51:09Z",
+          "localizedDescription": "## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- improved KernelLogViewController (60d74e5d121dead42062e7a99a8c4db9be2dcd6e, d571453f6447fbe863b9b94c09061df158af3d1e)\r\n- fixed utility compilation failing due to missing flags on lower iOS versions (a9cb50ebfee7e6797f9ded549cbbe6ac1c77f808)\r\n- fixed utility development (eeb9a1cee31b5fd10c12e100f0c019ab478afc9c, 8b04ef40b1bb21232999fd2f5e1577ec705d1ec1, f7b8f2303c3c511b86eeaa0eedf0976012170bef, 7090741ea6e4ae6dfc9e575471bbc08016950ce5)\r\n- added undo and redo button to CodeEditor (51bf2554358bffa8225bdf1c248853e4690dfd4c, a0987c1578ccf8aac27ddd256adc05716dd9cbf5, 08acab8c2895e5e4406a4484ab95a4ee33012e3c)\r\n- fixed iOS 14 appearance issues (942a861e62e64a86f8f52fdb0499e8a239905115, 025b4c1c5f776b8d6edebd95a2b42343119f0e14)\r\n- improved keyboard tab button with indentation features (e33ade5c5a888e9bf1c769873c2fa85823c33ba9, 61999897be379eab37de3f0048cda12036fefea2)\r\n- fixed LDEWindow focusing on iPadOS (54a3efcae1fd37f541908b0d3ff503a3a17b40cc, 8e21e1a08ad4f6c42eca72fb9b859b8a36d77baa)\r\n#### LiveContainer\r\n- fixed a bug where the bundle was kept `LiveProcess`, instead of overwritten with the value expected (78debea4b2870776e0317973d83a02732e9901c8)\r\n- overwrites now _CFGetProcessPath too (3307c66d05ee8d1b509cd26ad780d5eae5df31f1)\r\n- fixed home path for utilities (105968a97a978025250e0ef989c0281dca9dd530, a7497f92ef355991658fe9023781d6e10b5cfa13)\r\n- fixed `DYLD_INSERT_LIBRARIES` (9f6c1b720f8180bff1618a03d835b238210214a9)\r\n- reduced jitter of XCodeButton animations (6233eebbcdbb00fb3ae6080547f245f1147b47e4)\r\n----\r\n### Jailbroken\r\n#### Nyxian\r\n- initial release\r\n## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- improved KernelLogViewController (60d74e5d121dead42062e7a99a8c4db9be2dcd6e, d571453f6447fbe863b9b94c09061df158af3d1e)\r\n- fixed utility compilation failing due to missing flags on lower iOS versions (a9cb50ebfee7e6797f9ded549cbbe6ac1c77f808)\r\n- fixed utility development (eeb9a1cee31b5fd10c12e100f0c019ab478afc9c, 8b04ef40b1bb21232999fd2f5e1577ec705d1ec1, f7b8f2303c3c511b86eeaa0eedf0976012170bef, 7090741ea6e4ae6dfc9e575471bbc08016950ce5)\r\n- added undo and redo button to CodeEditor (51bf2554358bffa8225bdf1c248853e4690dfd4c, a0987c1578ccf8aac27ddd256adc05716dd9cbf5, 08acab8c2895e5e4406a4484ab95a4ee33012e3c)\r\n- fixed iOS 14 appearance issues (942a861e62e64a86f8f52fdb0499e8a239905115, 025b4c1c5f776b8d6edebd95a2b42343119f0e14)\r\n- improved keyboard tab button with indentation features (e33ade5c5a888e9bf1c769873c2fa85823c33ba9, 61999897be379eab37de3f0048cda12036fefea2)\r\n- fixed LDEWindow focusing on iPadOS (54a3efcae1fd37f541908b0d3ff503a3a17b40cc, 8e21e1a08ad4f6c42eca72fb9b859b8a36d77baa)\r\n#### LiveContainer\r\n- fixed a bug where the bundle was kept `LiveProcess`, instead of overwritten with the value expected (78debea4b2870776e0317973d83a02732e9901c8)\r\n- overwrites now _CFGetProcessPath too (3307c66d05ee8d1b509cd26ad780d5eae5df31f1)\r\n- fixed home path for utilities (105968a97a978025250e0ef989c0281dca9dd530, a7497f92ef355991658fe9023781d6e10b5cfa13)\r\n- fixed `DYLD_INSERT_LIBRARIES` (9f6c1b720f8180bff1618a03d835b238210214a9)\r\n- reduced jitter of XCodeButton animations (6233eebbcdbb00fb3ae6080547f245f1147b47e4)\r\n----\r\n### Jailbroken\r\n#### Nyxian\r\n- initial release\r\n",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.8.5/nyxian.ipa",
+          "size": 87483385,
+          "version": "0.8.5",
+          "buildVersion": "20260202.58",
+          "date": "2026-02-02T19:06:47Z",
+          "localizedDescription": "## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- fixed many objc object leaks (213308cbd7dfd06988c3062bb33b172c5175581d, 1f62e02604a65b13e34b829bfe41376253451b2f, c84a64d75bd40aafd435666a12bc61ecd9230c89, 1e589de103b363d9d06e1382427b08877c6d316f)\r\n- fixed many issues with utility development (f2f06fccfe4fef1b469fd2f9c8be7522befa002c, 314f8140739fb72901575e2e1a3be6fb6f8e6359, af34bd4de370ddc1efcf52d49340e1d7cb01b8b4, 648cadc1c17caa187ed071fae83f4731ebe72c52)\r\n- fixed some iOS panic issues(iommu panic) with utility development (8747b8e0574080964840e3cd39b65239addc7c9f)\r\n- fixed nyxian installation on many sideloading services (cf31de8aa9d1d5f42ab7d99bf331ebf6b70e8117)",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.8.4/nyxian.ipa",
+          "size": 87486290,
+          "version": "0.8.4",
+          "buildVersion": "20260131.32",
+          "date": "2026-01-31T22:52:20Z",
+          "localizedDescription": "## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- fixed deprecation warnings in code editor disappearing (979fd8cf302fffb2d2981497a81a5a4e07069f09)\r\n- fixed availability checks (to fix it in already existing projects append `-lclang.rt.ios` to the linker flags) (1947b21a9ae0475ea8674e99a8dcc49b2a4fa701)\r\n- improved memory management in typechecking engine, or better said fixing a bug in the preexisting memory management fixup (9b41a360d11907063c2c2641fa9ff9b751bb6a4d)\r\n- removed this ugly button from menubar (ebe74a1bb7d724cbd8dbf7dbc9f6f7dd73f2695a)\r\n- made file tabs easier to navigate (cb558b4fc8b956d2f34ae3c6e037a86e7466f762)\r\n- improved virtual keyboard handling (46e8e04e647c66013fa6d51998572227e77ce590)\r\n- fixed file tab bar for iOS 18 and below (f0f6b72274f541c7d55218d9a7d7a3dcbec50925)\r\n- fixing bugs in file tab removal (316ae024e798eb43c45db4f30617b49f1e85babe)\r\n- adding file saving animation\r\n- fixing incorrect entitlement mappings in menus (d46306cd162987b2c430f153d2b7625632763279)\r\n- fixing credits links not working (5b349cba5e0b8340817ffde719b7a0d712ccd34b)\r\n- fixing toggles turning white after reopening nyxian from app switcher (74abc717a489b378884d20ef619caaa7d61da8e9, 1cbb887139f4ee7051fc1a73b6640ec0f5c67b05)\r\n- fixing font size not changing preview (e057697d07f0c46fd22c643355e8eb1f9c75a696)\r\n- fixing window constraints math (71cf7dcce8d3b672fdce1bf58a1f36320834ddc7)\r\n- fixing scrollbar of guest app not applying to screen bounds (e75c63b566dbdacdf9af110fd030cdcf4457615d) (only partial fix)\r\n- fixing appearance issues (6c5fac84e8dc9ad655cb342880b18d8bcf8c868a, 36a2523a55469367c6ec7b672d4f6c9ffbcb2c5e)\r\n#### Kernel Virtualization Layer (ksurface)\r\n- improved syscall server syscall registration (5da26b973c8a434ef2d74b0f0ff2cd57c8b42aec)\r\n- improved syscall logging, aka unified it (b75f8b6c8696cc8e24c2f26775e2cc3c6dfc6b0f)",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.8.3/nyxian.ipa",
+          "size": 87397280,
+          "version": "0.8.3",
+          "buildVersion": "20260128.96",
+          "date": "2026-01-28T11:03:53Z",
+          "localizedDescription": "## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- redesigned UI for iPadOS to be more modern and more complete.\r\n- fixed issue navigation on iPadOS.\r\n- improved settings design.\r\n- updated from LLVM 19.1.6 to 19.1.7\r\n- improved windowing system on iPadOS (now you can place windows out of your screen constraints)\r\n- update default icon\r\n#### Kernel Virtualization Layer (ksurface)\r\n- improved `fork()` and `posix_spawn()` fix (https://github.com/ProjectNyxian/Nyxian/commit/d627cab99b851300db0940f28fa44719154d5d1f, https://github.com/ProjectNyxian/Nyxian/commit/92cd379e7617ab22a4fc220b7f478d3a242962ec, https://github.com/ProjectNyxian/Nyxian/commit/420f6c8c96555c5b5a94788bc833fcc2c5b425af, https://github.com/ProjectNyxian/Nyxian/commit/a23b981013b18c45c40a93d2d125424ce29fb127)\r\n- fixed buffer overflow in `proc_fork()` (https://github.com/ProjectNyxian/Nyxian/commit/6486d2034af21fdd2e01e244750f362d8c140af3)\r\n- fixed reference leak in `proc_fork()` (https://github.com/ProjectNyxian/Nyxian/commit/fbc9ce4d3f5441f40a2980a3f75c53e8ac1a9ddb)\r\n- fixed process state manipulation vulnerability (https://github.com/ProjectNyxian/Nyxian/commit/56ed04808f656eafc1b6a0e57d0ba27e6cac6994)\r\n- extended libproc fix\r\n- fixed memory leak/corruption vulnerability in syscall client (https://github.com/ProjectNyxian/Nyxian/commit/faef54f057397acdca002872616b562861ef04d5)\r\n- fixed process enumeration priveleges (https://github.com/ProjectNyxian/Nyxian/commit/014d46d9a0a6b49d3b962340584cfa58fc8ff8e7)\r\n- fixed buffer over-read in `SYS_SETHOSTNAME` (https://github.com/ProjectNyxian/Nyxian/commit/0bdc721b5c04dd851d03f22b36cb0bcfd32219e3)\r\n- fixed DOS in `SYS_GETHOSTNAME` (https://github.com/ProjectNyxian/Nyxian/commit/b09e54006470f164a2746de0a3e665f3ad611e38)\r\n- fixed race condition which could lead to a privilege escalation in `permissive_over_pid()` (https://github.com/ProjectNyxian/Nyxian/commit/560bd4793ceae51c1faef96950f01ea236c4e319)",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.8.2/Nyxian-Jailed.ipa",
+          "size": 166143119,
+          "version": "0.8.2",
+          "buildVersion": "20260121.35",
+          "date": "2026-01-21T17:31:28Z",
+          "localizedDescription": "## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- compatibility patches for older iOS versions(16.x/17.x) have been done.\r\n- redesigned UI for older iOS to look more modern, similar to the design philosophy of Nyxian on iOS 26.x\r\n- bootstrapping now is plist based instead of NSUserDefaults(cuz we cannot predict if its really bootstrapped without that)\r\n\r\n#### Kernel Virtualoization Layer (ksurface)\r\n- fixed vulnerability where old iOS versions cause ksurface to panic because of not nullified memory (https://github.com/ProjectNyxian/Nyxian/commit/89f37b57afb2ef8006abde3dbe9cd6b43cd6570d and https://github.com/ProjectNyxian/Nyxian/commit/aa1a37953d181d53002e420758506021d609ba0c)\r\n- fixed being able to set invalid hostnames (https://github.com/ProjectNyxian/Nyxian/commit/8b4e0750d0a6eb4839c2b79de26a3e6c483d8d81)\r\n- fixing buffer overflow vulnerability in SYS_proctb syscall (https://github.com/ProjectNyxian/Nyxian/commit/a85fe7ea5316b700cd14762ad8b9f6f2b81865d8) (probably unreachable because of memory constraints on jailed iOS)\r\n- fixing process structure poisoning  (https://github.com/ProjectNyxian/Nyxian/commit/387258a6914c97e19d1d146c36841c8f55bd2755)\r\n- fixing latent vulnerability in SYS_gettask syscall, caused by a invalid cleanup path, but invalid because proc copy structure destruction symbol does a null pointer check (https://github.com/ProjectNyxian/Nyxian/commit/9f54fca130934287eecf99fe5f27df9d64eb48c9)\r\n- fixed task port confusion vulnerability between the SYS_gettask and SYS_sentask syscall which could lead to mach ports being reused that were used by other processes. (https://github.com/ProjectNyxian/Nyxian/commit/6dc19a64fb8fcc42b95d94dc49d4f4f327828112)",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.8.1/nyxian_0.8.1_kate.ipa",
+          "size": 155341751,
+          "version": "0.8.1",
+          "buildVersion": "20251214.2",
+          "date": "2025-12-14T00:24:36Z",
+          "localizedDescription": "EXTREMELY NECESSARY UPDATE\r\n\r\n### Changelog\r\n- Fixed  `LDEThreadController` object leak causing infinite pthreads to be created\r\n- Fixed sub iOS 26.0 crash in code editor",
+          "minOSVersion": "16.0"
+        },
+        {
+          "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.8.0/nyxian_0.8.0_kate.ipa",
+          "size": 155341737,
+          "version": "0.8.0",
+          "buildVersion": "20251212.104",
+          "date": "2025-12-12T20:16:49Z",
+          "localizedDescription": "### Changelog\r\n- Added support for 3D rendering frameworks (simd fix)\r\n- Implemented hardened kernel virtualization layer\r\n- Introduced pointers to the kernel virtualization layer\r\n- Improved a lot of kernel APIs\r\n- Improved compilation speed(introduced `LDEGroupThreadController` and `LDEThreadController` that now work way more managed by the mach API)\r\n- Added actual syscall translation to the kernel virtualization layer that will entirely replace the `ServerSession` NSXPC proxy\r\n- Fixed a ton of race conditions and logic vulnerabilities\r\n- Improved design a lot(especially in app switcher)\r\n- Fixed UNIX semantics(we were treating ruid as euid ;w;)\r\n- Resecuring instead of bypassing the NSExtension security\r\n- Fixed(again) gethostname and sethostname\r\n\r\n### Notes\r\nIn 0.9.x aka the beta of Nyxian we introduce swift support to Nyxian. swift is a mess to patch and optimize for use in iOS and we actually care about user experience.",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSFaceIDUsageDescription": "An app in emexDE might request this permission.",
+          "NSSystemExtensionUsageDescription": "An app in emexDE might request this permission.",
+          "NSNearbyInteractionUsageDescription": "An app in emexDE might request this permission.",
+          "NSContactsUsageDescription": "An app in emexDE might request this permission.",
+          "NSHealthShareUsageDescription": "An app in emexDE might request this permission.",
+          "NSPhotoLibraryUsageDescription": "An app in emexDE might request this permission.",
+          "NSSiriUsageDescription": "An app in emexDE might request this permission.",
+          "NSRemovableVolumesUsageDescription": "An app in emexDE might request this permission.",
+          "NSSpeechRecognitionUsageDescription": "An app in emexDE might request this permission.",
+          "NSSensorKitUsageDescription": "An app in emexDE might request this permission.",
+          "NSNetworkVolumesUsageDescription": "An app in emexDE might request this permission.",
+          "NSFileProviderPresenceUsageDescription": "An app in emexDE might request this permission.",
+          "NSIdentityUsageDescription": "An app in emexDE might request this permission.",
+          "NSDesktopFolderUsageDescription": "An app in emexDE might request this permission.",
+          "NSBluetoothWhileInUseUsageDescription": "An app in emexDE might request this permission.",
+          "NSUserTrackingUsageDescription": "An app in emexDE might request this permission.",
+          "NSAppleEventsUsageDescription": "An app in emexDE might request this permission.",
+          "NSRemindersUsageDescription": "An app in emexDE might request this permission.",
+          "NSVoIPUsageDescription": "An app in emexDE might request this permission.",
+          "NSFallDetectionUsageDescription": "An app in emexDE might request this permission.",
+          "NSBluetoothAlwaysUsageDescription": "An app in emexDE might request this permission.",
+          "NSSystemAdministrationUsageDescription": "An app in emexDE might request this permission.",
+          "NSHealthUpdateUsageDescription": "An app in emexDE might request this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "An app in emexDE might request this permission.",
+          "NSPhotoLibraryAddUsageDescription": "An app in emexDE might request this permission.",
+          "NSCameraUsageDescription": "An app in emexDE might request this permission.",
+          "NSMicrophoneUsageDescription": "An app in emexDE might request this permission.",
+          "NSLocationUsageDescription": "An app in emexDE might request this permission.",
+          "NSGKFriendListUsageDescription": "An app in emexDE might request this permission.",
+          "NSAppleMusicUsageDescription": "An app in emexDE might request this permission.",
+          "NSMotionUsageDescription": "An app in emexDE might request this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "An app in emexDE might request this permission.",
+          "NSVideoSubscriberAccountUsageDescription": "An app in emexDE might request this permission.",
+          "NSBluetoothPeripheralUsageDescription": "An app in emexDE might request this permission.",
+          "NSCalendarsUsageDescription": "An app in emexDE might request this permission.",
+          "NSFocusStatusUsageDescription": "An app in emexDE might request this permission.",
+          "NSHomeKitUsageDescription": "An app in emexDE might request this permission.",
+          "NSLocationAlwaysUsageDescription": "An app in emexDE might request this permission.",
+          "NSLocalNetworkUsageDescription": "An app in emexDE might request this permission.",
+          "NSDownloadsFolderUsageDescription": "An app in emexDE might request this permission.",
+          "NSDocumentsFolderUsageDescription": "An app in emexDE might request this permission.",
+          "NSLocationWhenInUseUsageDescription": "An app in emexDE might request this permission.",
+          "NSSensorKitPrivacyPolicyURL": "An app in emexDE might request this permission.",
+          "NSFileProviderDomainUsageDescription": "An app in emexDE might request this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "An app in emexDE might request this permission."
+        }
+      }
+    }
+  ],
   "news": [
     {
-      "title": "emexDE (Nyxian) has moved it's altsource!",
-      "identifier": "move",
-      "caption": "Click here to add the new altsource",
-      "date": "2099-01-01T00:00:00Z",
-      "tintColor": "#f00",
-      "notify": true,
-      "url": "https://stikstore.app/altdirect/?url=https://emexlabs.org/emexDE/apps.json&exclude=livecontainer"
+      "title": "Discord",
+      "identifier": "discord",
+      "caption": "The offical emexLabs Discord Server",
+      "date": "2026-02-23T20:24:00Z",
+      "tintColor": "#5865F2",
+      "notify": false,
+      "url": "https://discord.gg/Cbeg3gJzC7"
     }
   ]
 }
