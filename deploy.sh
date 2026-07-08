@@ -2,16 +2,19 @@
 
 set -e
 
-if [ -z "${1%@*}" ] || [ -z "${1#*@}" ]; then
-    echo "Please specify a valid ssh connection! (user@host)" >&2
-    exit 1
-fi
+case "$1" in
+    *@*) ;;
+    *)
+        echo "Please specify a valid ssh connection! (user@host)" >&2
+        exit 1
+        ;;
+esac
 
 cd "$(dirname "$0")"
 
 if [ "$2" != "--skip-build" ] && [ "$2" != "-s" ]; then
     npm run build
-    printf "\n"
+    printf '\n'
 fi
 
 ssh "$1" /bin/sh <<'EOF'
@@ -23,11 +26,11 @@ scp -rC ./build "$1:~/emexlabs"
 
 ssh "$1" /bin/sh <<'EOF'
 set -e
-find "$HOME/emexlabs" -type d -exec chmod 755 {} \;
-find "$HOME/emexlabs" -type f -exec chmod 644 {} \;
+find "$HOME/emexlabs" -type d -exec chmod 755 {} +
+find "$HOME/emexlabs" -type f -exec chmod 644 {} +
 EOF
 
-# Bootstrap compairison
+# Bootstrap comparison
 set +e
 ssh "$1" /bin/sh <<'EOF'
 diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
@@ -35,11 +38,11 @@ exit $?
 EOF
 bootstrap_diff=$?
 set -e
-if [ $bootstrap_diff -ne 0 ]; then
-    if [ $bootstrap_diff -eq 1 ]; then
-        printf "Bootstrap is different! Replace it? [y/N] "
+if [ "$bootstrap_diff" -ne 0 ]; then
+    if [ "$bootstrap_diff" -eq 1 ]; then
+        printf 'Bootstrap is different! Replace it? [y/N] '
     else
-        printf "Bootstrap check failed! Continue anyway? [y/N] "
+        printf 'Bootstrap check failed! Continue anyway? [y/N] '
     fi
     if [ ! -t 0 ]; then
         echo "No stdin. Exiting." >&2
@@ -48,14 +51,26 @@ if [ $bootstrap_diff -ne 0 ]; then
     read -r response
     case "$response" in
         [yY][eE][sS]|[yY]) ;;
-        *) exit 1 ;;
+        *) printf 'Cancelling deployment.';  exit 1 ;;
     esac
 fi
 
 ssh "$1" /bin/sh <<'EOF'
+set -e
+
 # Deployment
+trap '
+status=$?
+printf "\n\033[31;1mDeployment failed!\nMaybe your servers mv command does not support --exchange?\033[0m\n" >&2
+exit $status
+' 0
 mv --exchange -T "$HOME/emexlabs" "/var/www/emexlabs"
-printf "\n\033[32;1mDeployed successfully!\033[0m\n"
+trap '
+status=$?
+printf "\n\033[31;1mBackup failed!\033[0m\n" >&2
+exit $status
+' 0
+printf '\n\033[32;1mDeployed successfully!\033[0m\n\nBacking up old site...\n'
 
 # Backup creation
 mkdir -p "$HOME/backups"
@@ -67,5 +82,6 @@ while [ -e "$HOME/$backup_path" ]; do
     backup_path="backups/website-${backup_timestamp}-$i"
 done
 mv "$HOME/emexlabs" "$HOME/$backup_path"
-printf "\n\033[33;1mBackup successful!\033[0m\n"
+trap - 0
+printf '\n\033[33;1mBackup successful!\033[0m\n'
 EOF
