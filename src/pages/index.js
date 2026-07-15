@@ -36,7 +36,7 @@ export default function Home() {
       description={siteConfig.tagline}>
       <HomepageHeader />
       <main className={styles.center}>
-        <div className="sectionsRow">
+        <div className="sections">
           <div className={styles.project}>
             <img src={useBaseUrl('/emexOS/img/logo.png')} className={clsx(styles.circle, styles.logo)} />
             <Heading as="h2" className="hero__title">

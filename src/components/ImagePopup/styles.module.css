@@ -8,6 +8,7 @@
     z-index: 201;
     cursor: pointer;
     max-height: none;
+    padding: 2rem;
 }
 
 .popup > button {
@@ -23,15 +24,14 @@
     border: none;
     color: #fff;
     font-size: large;
+    user-select: none;
     cursor: pointer;
 }
 
 .popup > img {
-    max-width: 95vw;
-    max-height: 95vh;
     object-fit: contain;
     border-radius: 0;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    user-select: none;
     cursor: default;
 }
 
@@ -43,4 +43,5 @@
     color: #fff;
     cursor: default;
     font-size: larger;
+    cursor: text;
 }
