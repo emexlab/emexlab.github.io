@@ -169,7 +169,7 @@ const config = {
         style: 'light',
         links: [
           {
-            title: 'Team',
+            title: 'Team & More',
             items: [
               {
                 label: 'Members',
@@ -178,6 +178,10 @@ const config = {
               {
                 label: 'Website Credits',
                 to: 'website/credits',
+              },
+              {
+                label: 'Website Contributing',
+                to: 'website/contributing',
               },
             ],
           },
