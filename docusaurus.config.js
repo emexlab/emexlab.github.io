@@ -9,6 +9,7 @@ const config = {
   title: 'emexLabs',
   tagline: 'Unfolding the power of programming',
   favicon: '/favicon.ico', // More favicons at headTags
+  trailingSlash: true,
 
   titleDelimiter: '·',
 
