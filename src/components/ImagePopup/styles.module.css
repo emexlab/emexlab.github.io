@@ -7,12 +7,13 @@
     align-items: center;
     z-index: 201;
     cursor: pointer;
-    max-height: none;
-    padding: 2rem;
+    width: 100vw;
+    height: 100vh;
+    padding: max(5%, 3rem);
 }
 
 .popup > button {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     z-index: 202;
@@ -31,12 +32,14 @@
 .popup > img {
     object-fit: contain;
     border-radius: 0;
+    max-width: 100%;
+    max-height: 100%;
     user-select: none;
     cursor: default;
 }
 
 .popup > span {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     z-index: 202;
     margin: 1rem;
