@@ -37,7 +37,6 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: build
-    if: ${{ !startsWith(github.event.head_commit.message, 'WIP:') }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
