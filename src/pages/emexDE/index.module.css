@@ -41,3 +41,13 @@ article {
   width: 100%;
   max-width: 50rem;
 }
+
+@media screen and (min-width: 997px) {
+  .divided > * {
+    border: none;
+    align-self: center;
+    align-items: start;
+    text-align: start;
+    padding: 1rem;
+  }
+}

@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </header>
       <main className={styles.center}>
-        <div className="sections">
+        <div className={clsx('sections', styles.divided)}>
           <div className="center">
             <ImagePopup src={useBaseUrl('/emexDE/img/mockup.png')} alt="Mockup" className={styles.showcase} />
           </div>
