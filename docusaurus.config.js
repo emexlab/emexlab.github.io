@@ -153,7 +153,7 @@ const config = {
             'aria-label': 'GitHub',
           },
           {
-            href: 'https://discord.gg/Cbeg3gJzC7',
+            href: 'https://discord.gg/H96bhkAHjB',
             position: 'right',
             className: "navbar-icon discord",
             'aria-label': 'Discord',
