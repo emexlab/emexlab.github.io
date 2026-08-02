@@ -9,6 +9,7 @@ const config = {
   title: 'emexLabs',
   tagline: 'Unfolding the power of programming',
   favicon: '/favicon.ico', // More favicons at headTags
+  trailingSlash: true,
 
   titleDelimiter: '·',
 
@@ -152,7 +153,7 @@ const config = {
             'aria-label': 'GitHub',
           },
           {
-            href: 'https://discord.gg/Cbeg3gJzC7',
+            href: 'https://discord.gg/H96bhkAHjB',
             position: 'right',
             className: "navbar-icon discord",
             'aria-label': 'Discord',
