@@ -9,6 +9,9 @@
 [emexlabs.org](https://emexlabs.org/) was built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ## Todo
+General:
+- [ ] Make navbar logos be horizontal in the sidebar on mobile
+
 emexOS:
 - [ ] Create homepage
 
