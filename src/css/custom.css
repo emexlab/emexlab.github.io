@@ -38,7 +38,7 @@ img {
   object-fit: contain;
 }
 
-a {
+.markdown a {
   text-decoration: underline;
 }
 
