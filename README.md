@@ -10,9 +10,10 @@
 
 ## Todo
 emexOS:
-- [ ] Port it's homepage ([Original](https://emexos.github.io/web/page/0/index.html)|[Source](https://github.com/emexos/web/tree/main/page/0))
+- [ ] Create homepage
 
 emexDE:
+- [ ] Finish homepage
 - Documentations to write:
     - [ ] nxtool guide
     - [ ] Syscalls
