@@ -1,3 +1,8 @@
+general:
+  label: General
+  permalink: /general
+  description: Info about emexLabs as a whole
+
 emexos:
   label: emexOS
   permalink: /emexOS

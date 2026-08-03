@@ -299,6 +299,9 @@ const config = {
   ],
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownImages: 'warn',
+    },
   },
   themes: [
     '@docusaurus/theme-mermaid',
@@ -316,6 +319,8 @@ if (['production', 'staging', 'testing'].includes(process.env.NODE_ENV)) {
   config.onBrokenAnchors = 'throw';
   config.onBrokenMarkdownLinks = 'throw';
   config.onDuplicateRoutes = 'throw';
+  config.markdown.hooks.onBrokenMarkdownLinks = 'throw';
+  config.markdown.hooks.onBrokenMarkdownImages = 'throw';
 };
 
 export default config;
