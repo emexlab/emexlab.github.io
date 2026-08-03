@@ -9,11 +9,16 @@
 [emexlabs.org](https://emexlabs.org/) was built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ## Todo
+General:
+- [ ] Make navbar logos be horizontal in the sidebar on mobile
+
 emexOS:
-- [ ] Port it's homepage ([Original](https://emexos.github.io/web/page/0/index.html)|[Source](https://github.com/emexos/web/tree/main/page/0))
+- [ ] Create homepage
 
 emexDE:
+- [ ] Finish homepage
 - Documentations to write:
+    - [ ] Usage guide/Tutorial
     - [ ] nxtool guide
     - [ ] Syscalls
     - [ ] Entitlement system
@@ -56,7 +61,7 @@ This command generates static content into the `build` directory and can be serv
 
 ### Github Pages
 
-You can find an automatic build of the newest state at https://emexlab.github.io/emexDE/
+You can find an automatic build of the newest state at https://emexlab.github.io/
 
 ### SSH
 
@@ -67,4 +72,4 @@ You can find an automatic build of the newest state at https://emexlab.github.io
 This will build the site and upload it via ssh to the specified host as the specified user.
 
 > [!NOTE]
-> It's recommended to set up SSH keys beforehand. Otherwise, you'll be prompted for your SSH password three times during deployment.
+> It's recommended to set up SSH keys beforehand. Otherwise, you'll be prompted for your SSH password several times during deployment.
