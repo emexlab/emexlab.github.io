@@ -18,7 +18,7 @@ emexOS:
 emexDE:
 - [ ] Finish homepage
 - Documentations to write:
-    - [ ] Write usage guide
+    - [ ] Usage guide/Tutorial
     - [ ] nxtool guide
     - [ ] Syscalls
     - [ ] Entitlement system
