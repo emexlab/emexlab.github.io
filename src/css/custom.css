@@ -38,6 +38,10 @@ img {
   object-fit: contain;
 }
 
+a {
+  text-decoration: underline;
+}
+
 .markdown img {
   border-radius: 0.5rem;
 }
