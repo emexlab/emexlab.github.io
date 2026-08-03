@@ -13,7 +13,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero--primary', styles.heroBanner)}>
       <div className="container">
-        <img alt="Logo" src={useBaseUrl('/org.png')} className={styles.logo} />
+        <img alt={siteConfig.title + " logo" src={useBaseUrl('/org.png')} className={styles.logo} />
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
@@ -38,7 +38,7 @@ export default function Home() {
       <main className={styles.center}>
         <div className="sections">
           <div className={styles.project}>
-            <img src={useBaseUrl('/emexOS/img/logo.png')} className={clsx(styles.circle, styles.logo)} />
+            <img alt="emexOS logo" src={useBaseUrl('/emexOS/img/logo.png')} className={clsx(styles.circle, styles.logo)} />
             <Heading as="h2" className="hero__title">
               emexOS
             </Heading>
@@ -53,7 +53,7 @@ export default function Home() {
           </div>
           <div className={styles.project}>
             <ThemedImage
-              alt="Logo"
+              alt="emexDE logo"
               sources={{
                 light: useBaseUrl('/emexDE/img/icon/light.png'),
                 dark: useBaseUrl('/emexDE/img/icon/dark.png'),
