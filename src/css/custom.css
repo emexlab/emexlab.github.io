@@ -46,6 +46,13 @@ img {
   border-radius: 20%;
 }
 
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .horizontal-scroll {
   display: flex;
   flex-direction: row;
@@ -62,7 +69,7 @@ img {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   margin-bottom: var(--ifm-paragraph-margin-bottom);
 }
 

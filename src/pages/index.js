@@ -35,7 +35,7 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description={siteConfig.tagline}>
       <HomepageHeader />
-      <main className={styles.center}>
+      <main className="center">
         <div className="sections">
           <div className={styles.project}>
             <img alt="emexOS logo" src={useBaseUrl('/emexOS/img/logo.png')} className={clsx(styles.circle, styles.logo)} />
