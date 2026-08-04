@@ -3,7 +3,7 @@
   "identifier": "com.emexde.moved",
   "subtitle": "",
   "iconURL": "https://emexlabs.org/emexDE/img/icon/light.png",
-  "website": "https://stikstore.app/altdirect/?url=https://emexlabs.org/apps.json&exclude=livecontainer",
+  "website": "https://altdirect.app/altdirect/?url=https://emexlabs.org/apps.json&exclude=livecontainer",
   "tintColor": "#f00",
   "featuredApps": [],
   "apps": [],
@@ -15,7 +15,7 @@
       "date": "2099-01-01T00:00:00Z",
       "tintColor": "#f00",
       "notify": true,
-      "url": "https://stikstore.app/altdirect/?url=https://emexlabs.org/apps.json&exclude=livecontainer"
+      "url": "https://altdirect.app/altdirect/?url=https://emexlabs.org/apps.json&exclude=livecontainer"
     }
   ]
 }
