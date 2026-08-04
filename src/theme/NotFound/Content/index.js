@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
+import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
 export default function NotFoundContent({className}) {
@@ -36,8 +37,21 @@ export default function NotFoundContent({className}) {
             <br />
             <Translate
               id="theme.NotFound.p2"
-              description="The 2nd paragraph of the 404 page">
-              If you got here from a link on the website please report it at our Github.
+              description="The 2nd paragraph of the 404 page"
+              values={{
+                github: (
+                  <Link
+                    to="https://github.com/emexlab/emexlab.github.io"
+                    style={{
+                      textDecoration: 'underline'
+                    }}
+                  >
+                    Github
+                  </Link>
+                )
+              }}
+            >
+              {'If you got here from a link on the website please report it at our {github}.'}
             </Translate>
           </p>
         </div>
