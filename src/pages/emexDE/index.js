@@ -42,7 +42,9 @@ export default function Home() {
           <div className="center">
             <ImagePopup src={useBaseUrl('/emexDE/img/mockup.png')} alt="Mockup" className={styles.showcase} />
           </div>
-          <p>s</p>
+          <div>
+          
+          </div>
         </div>
       </main>
     </Layout>
