@@ -38,12 +38,23 @@ img {
   object-fit: contain;
 }
 
+.markdown a {
+  text-decoration: underline;
+}
+
 .markdown img {
   border-radius: 0.5rem;
 }
 
 .rounded {
   border-radius: 20%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .horizontal-scroll {
@@ -62,7 +73,7 @@ img {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   margin-bottom: var(--ifm-paragraph-margin-bottom);
 }
 
