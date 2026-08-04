@@ -6,6 +6,7 @@ import ThemedImage from '@theme/ThemedImage';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import ImagePopup from '@site/src/components/ImagePopup';
+import IntroText from './_intro.mdx';
 
 export default function Home() {
   return (
@@ -45,6 +46,9 @@ export default function Home() {
           <div>
           
           </div>
+        </div>
+        <div className={styles.intro}>
+          <IntroText />
         </div>
       </main>
     </Layout>
