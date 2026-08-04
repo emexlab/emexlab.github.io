@@ -38,12 +38,13 @@ img {
   object-fit: contain;
 }
 
-.markdown a {
-  text-decoration: underline;
-}
-
-.markdown img {
-  border-radius: 0.5rem;
+article:not(:has(> .markdown)), article > .markdown {
+  a[class=""] {
+    text-decoration: underline;
+  }
+  img[class=""] {
+    border-radius: 0.5rem;
+  }
 }
 
 .rounded {
