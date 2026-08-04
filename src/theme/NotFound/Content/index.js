@@ -41,7 +41,7 @@ export default function NotFoundContent({className}) {
               values={{
                 github: (
                   <Link
-                    to="https://github.com/emexlab/emexlab.github.io"
+                    to="https://github.com/emexlab/emexlab.github.io/issues/new/choose"
                     style={{
                       textDecoration: 'underline'
                     }}
