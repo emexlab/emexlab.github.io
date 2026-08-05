@@ -31,30 +31,18 @@
   max-width: 50rem;
 }
 
-@media screen and (min-width: 997px) {
-  .divided > * {
-    border: none;
-    align-self: center;
-    align-items: start;
-    text-align: start;
-    padding: 1rem;
-  }
-}
-
 .main {
   max-width: 100rem;
   align-self: center;
 }
 
-.introMD {
+.additionalText {
   padding: 0 var(--ifm-spacing-horizontal);
-  max-width: 50vw;
-}
+  :global(.task-list-item) {
+    list-style-type: none;
+  }
 
-.introMD :global(.task-list-item) {
-  list-style-type: none;
-}
-
-.introMD :global(.contains-task-list) {
-  padding-left: 0.5rem;
+  :global(.contains-task-list) {
+    padding-left: 0.5rem;
+  }
 }

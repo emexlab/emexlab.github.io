@@ -73,7 +73,7 @@ article:not(:has(> .markdown)), article > .markdown {
 .sections {
   display: flex;
   align-items: stretch;
-  justify-content: center;
+  justify-content: space-around;
   width: 90%;
   margin-bottom: var(--ifm-paragraph-margin-bottom);
 }
@@ -89,6 +89,7 @@ article:not(:has(> .markdown)), article > .markdown {
     transparent 100%
   ) 1;
   flex: 1;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
