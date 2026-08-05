@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
         <Admonition type="info">
-          Remember emexDE is still in beta, so some issue might arise! Please report issues over at the [Github](https://github.com/emexlab/emexDE/issues/new/choose).
+          Remember emexDE is still in beta, so some issue might arise! Please report issues over at the <a href="https://github.com/emexlab/emexDE/issues/new/choose" target="_blank" rel="noopener noreferrer" class="">Github</a>.
         </Admonition>
         <AdditionalText />
       </main>
