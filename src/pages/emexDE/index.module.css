@@ -41,6 +41,20 @@
   }
 }
 
-.intro {
+.main {
+  max-width: 100rem;
+  align-self: center;
+}
+
+.introMD {
   padding: 0 var(--ifm-spacing-horizontal);
+  max-width: 50vw;
+}
+
+.introMD :global(.task-list-item) {
+  list-style-type: none;
+}
+
+.introMD :global(.contains-task-list) {
+  padding-left: 0.5rem;
 }

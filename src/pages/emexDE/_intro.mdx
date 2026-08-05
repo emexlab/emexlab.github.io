@@ -1,30 +1,35 @@
+import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Heading from '@theme/Heading';
+import Admonition from '@theme/Admonition';
+import styles from './index.module.css';
+import ImagePopup from '@site/src/components/ImagePopup';
 
-# Introduction
+<Heading as="h1">Introduction</Heading>
+<div className={clsx('sections', styles.divided)}>
+    <ImagePopup src={useBaseUrl('/emexDE/img/mockup.png')} alt="Mockup" className={styles.showcase} />
+    <div className={styles.introMD}>
+        ## What is it?
+        emexDE is an iOS app that empowers developers with a full toolchain they can use while even being offline for iOS development on iPhone. It supports Swift, C, Objective-C, C++ and Objective-C++. It’s a powerful Xcode alternative that made the impossible possible, a fully on-device iOS IDE that doesn’t even need a cloud and can even be used with airplane mode enabled. It supports officially iOS 16 all the way up to the latest iOS version. You can compile and run iOS apps on the go with ease, using the entire iOS 26.4 SDK.
+    </div>
+</div>
+<div className={styles.introMD}>
+    <Admonition type="info">
+        Remember emexDE is still in beta, so some issue might arise! Please report issues over at the [Github](https://github.com/emexlab/emexDE/issues/new/choose).
+    </Admonition>
 
-## What is it?
-emexDE is an iOS app that empowers developers with a full toolchain they can use while even being offline for iOS development on iPhone. It supports Swift, C, Objective-C, C++ and Objective-C++. It’s a powerful Xcode alternative that made the impossible possible, a fully on-device iOS IDE that doesn’t even need a cloud and can even be used with airplane mode enabled. It supports officially iOS 16 all the way up to the latest iOS version. You can compile and run iOS apps on the go with ease, using the entire iOS 26.4 SDK.
-
-:::info
-
-Remember emexDE is still in beta, so some issue might arise! Please report issues over at the [Github](https://github.com/emexlab/emexDE/issues/new/choose).
-
-:::
-
-## Installation
-To start using emexDE view the <a href={useBaseUrl('/emexDE/docs/installation')}>Installation Guide</a>.
-
-## Features
-- [x] Code execution using NSExtension
-- [x] Syscall Handling 
-- [x] Sub processsing
-- [x] Compiling code
-- [x] Linking object files
-- [x] Signing executables
-- [x] Native iOS app development
-- [x] Native iOS utility development
-- [x] Swift support
-- [ ] Native iOS library development
-- [ ] Native iOS swift package development
-- [ ] Native iOS framework development
-- [ ] Native iOS tweak development
+    ## Features
+    - [x] Code execution using NSExtension
+    - [x] Syscall Handling 
+    - [x] Sub processsing
+    - [x] Compiling code
+    - [x] Linking object files
+    - [x] Signing executables
+    - [x] Native iOS app development
+    - [x] Native iOS utility development
+    - [x] Swift support
+    - [ ] Native iOS library development
+    - [ ] Native iOS swift package development
+    - [ ] Native iOS framework development
+    - [ ] Native iOS tweak development
+</div>
