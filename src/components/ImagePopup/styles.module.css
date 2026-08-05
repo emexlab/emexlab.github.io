@@ -7,8 +7,8 @@
     align-items: center;
     z-index: 201;
     cursor: pointer;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     padding: max(5%, 3rem);
 }
 
@@ -24,7 +24,7 @@
     background: none;
     border: none;
     color: #fff;
-    font-size: large;
+    font-size: larger;
     user-select: none;
     cursor: pointer;
 }

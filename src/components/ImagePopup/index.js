@@ -35,7 +35,7 @@ export default function ImagePopup({ src, alt = "", className = "", style = {} }
 
       {open && (
         <div onClick={() => setOpen(false)} className={styles.popup}>
-          <button onClick={() => setOpen(false)}>X</button>
+          <button onClick={() => setOpen(false)}>╳</button>
           <img
             src={src}
             alt={alt}
