@@ -9,7 +9,7 @@
     cursor: pointer;
     width: 100dvw;
     height: 100dvh;
-    padding: max(5%, 3rem);
+    padding: max(5%, 2rem);
 }
 
 .popup > button {
