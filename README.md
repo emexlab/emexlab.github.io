@@ -10,21 +10,22 @@
 
 ## Todo
 General:
-- [ ] Make navbar logos be horizontal in the sidebar on mobile
+- [x] Make navbar logos be horizontal in the sidebar on mobile
 
 emexOS:
 - [ ] Create homepage
 
 emexDE:
-- [ ] Finish homepage
+- [x] Finish homepage
 - Documentations to write:
     - [ ] Usage guide/Tutorial
-    - [ ] nxtool guide
-    - [ ] Syscalls
-    - [ ] Entitlement system
-    - [ ] Kernel explaination
+    - [ ] ~~nxtool guide~~
+    - [ ] ~~Syscalls~~
+    - [ ] ~~Entitlement system~~
+    - [ ] ~~Kernel explaination~~
 
 emex64:
+- [ ] Create homepage
 - [ ] Write docs
 
 ## Quickstart
