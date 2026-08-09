@@ -197,7 +197,7 @@ li:has(.navbar-icon):not(li:has(.navbar-icon) ~ *)::before {
   display: inline-block;
   position: absolute;
   left: 0;
-  transform: translate(5%, -0.5rem);
+  transform: translate(5%, calc(-0.5rem + 1px));
   background: linear-gradient(
       to right,
       transparent,
