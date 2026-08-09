@@ -50,9 +50,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'emexOS',
-        path: 'emexOS/docs',
-        routeBasePath: 'emexOS/docs',
+        id: 'Nyxian',
+        path: 'Nyxian/docs',
+        routeBasePath: 'Nyxian/docs',
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl:
           'https://github.com/emexlab/emexlab.github.io/tree/main/',
@@ -61,9 +61,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'emexDE',
-        path: 'emexDE/docs',
-        routeBasePath: 'emexDE/docs',
+        id: 'emexOS',
+        path: 'emexOS/docs',
+        routeBasePath: 'emexOS/docs',
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl:
           'https://github.com/emexlab/emexlab.github.io/tree/main/',
@@ -116,13 +116,13 @@ const config = {
         },
         items: [
           {
-            to: 'emexOS/docs', // Revert this to 'emexOS'
-            label: 'emexOS',
+            to: 'Nyxian',
+            label: 'Nyxian',
             position: 'left',
           },
           {
-            to: 'emexDE',
-            label: 'emexDE',
+            to: 'emexOS/docs', // Revert this to 'emexOS'
+            label: 'emexOS',
             position: 'left',
           },
           {
@@ -229,8 +229,8 @@ const config = {
         additionalLanguages: ['c', 'csharp'],
       },
       metadata: [
-        {name: 'keywords', content: 'emexlab, emexOS, OS, 64bit, scratch, kernel, emexDE, iOS, app development, IDE, jailed, unjailbroken, custom kernel'},
-        {name: 'description', content: 'The team behind emexOS, a simple 64 bit experimental Operating System written from scratch, and emexDE, an IDE to develop native code iOS apps and tools on unjailbroken iOS.'},
+        {name: 'keywords', content: 'emexlab, emexOS, OS, 64bit, scratch, kernel, Nyxian, iOS, app development, IDE, jailed, unjailbroken, custom kernel'},
+        {name: 'description', content: 'The team behind emexOS, a simple 64 bit experimental Operating System written from scratch, and Nyxian, an IDE to develop native code iOS apps and tools on unjailbroken iOS.'},
         {name: 'apple-mobile-web-app-title', content: 'emexLabs'},
       ],
     }),

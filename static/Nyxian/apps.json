@@ -1,17 +1,17 @@
 {
-  "name": "emexDE (moved!)",
-  "identifier": "com.emexde.moved",
+  "name": "Nyxian (moved!)",
+  "identifier": "com.nyxian.moved",
   "subtitle": "",
-  "iconURL": "https://emexlabs.org/emexDE/img/icon/light.png",
+  "iconURL": "https://emexlabs.org/Nyxian/img/icon/light.png",
   "website": "https://altdirect.app/?url=https://emexlabs.org/apps.json&exclude=livecontainer",
   "tintColor": "#f00",
   "featuredApps": [],
   "apps": [],
   "news": [
     {
-      "title": "emexDE (Nyxian) has moved it's altsource!",
+      "title": "Nyxian has moved it's AltSource!",
       "identifier": "move",
-      "caption": "Click here to add the new altsource",
+      "caption": "Click here to add the new AltSource",
       "date": "2099-01-01T00:00:00Z",
       "tintColor": "#f00",
       "notify": true,

@@ -38,6 +38,27 @@ export default function Home() {
       <main className="center">
         <div className="sections">
           <div className={styles.project}>
+            <ThemedImage
+              alt="Nyxian logo"
+              sources={{
+                light: useBaseUrl('/Nyxian/img/icon/light.png'),
+                dark: useBaseUrl('/Nyxian/img/icon/dark.png'),
+              }}
+              className={styles.logo}
+            />
+            <Heading as="h2" className="hero__title">
+              Nyxian
+            </Heading>
+            <p className="hero__subtitle">
+              IDE to develop native code iOS apps and tools on unjailbroken iOS
+            </p>
+            <Link
+              className="button button--secondary button--lg"
+              to="/Nyxian">
+              View
+            </Link>
+          </div>
+          <div className={styles.project}>
             <img alt="emexOS logo" src={useBaseUrl('/emexOS/img/logo.png')} className={clsx(styles.circle, styles.logo)} />
             <Heading as="h2" className="hero__title">
               emexOS
@@ -48,27 +69,6 @@ export default function Home() {
             <Link
               className="button button--secondary button--lg"
               to="/emexOS/docs"> {/* Revert this to "/emexOS" */}
-              View
-            </Link>
-          </div>
-          <div className={styles.project}>
-            <ThemedImage
-              alt="emexDE logo"
-              sources={{
-                light: useBaseUrl('/emexDE/img/icon/light.png'),
-                dark: useBaseUrl('/emexDE/img/icon/dark.png'),
-              }}
-              className={styles.logo}
-            />
-            <Heading as="h2" className="hero__title">
-              emexDE
-            </Heading>
-            <p className="hero__subtitle">
-              IDE to develop native code iOS apps and tools on unjailbroken iOS
-            </p>
-            <Link
-              className="button button--secondary button--lg"
-              to="/emexDE">
               View
             </Link>
           </div>

@@ -12,20 +12,20 @@ import AdditionalText from './_additionalText.mdx';
 export default function Home() {
   return (
     <Layout
-      title="emexDE"
+      title="Nyxian"
       description="IDE to develop native code iOS apps and tools on unjailbroken iOS">
       <header className={clsx('hero--primary', styles.heroBanner)}>
         <div className="container">
           <ThemedImage
             alt="Logo"
             sources={{
-              light: useBaseUrl('/emexDE/img/icon/light.png'),
-              dark: useBaseUrl('/emexDE/img/icon/dark.png'),
+              light: useBaseUrl('/Nyxian/img/icon/light.png'),
+              dark: useBaseUrl('/Nyxian/img/icon/dark.png'),
             }}
             className={styles.logo}
           />
           <Heading as="h1" className="hero__title">
-            emexDE
+            Nyxian
           </Heading>
           <p className="hero__subtitle">
             IDE to develop native code iOS apps and tools on unjailbroken iOS
@@ -33,7 +33,7 @@ export default function Home() {
           <div className={styles.buttons}>
             <Link
               className="button button--secondary button--lg"
-              to="/emexDE/docs/installation">
+              to="/Nyxian/docs/installation">
               Get Started
             </Link>
           </div>
@@ -42,16 +42,16 @@ export default function Home() {
       <main className={clsx('center', styles.main)}>
         <Heading as="h1">Introduction</Heading>
         <div className={clsx('sections', styles.divided)}>
-          <ImagePopup src={useBaseUrl('/emexDE/img/mockup.png')} alt="Mockup" className={styles.showcase} />
+          <ImagePopup src={useBaseUrl('/Nyxian/img/mockup.png')} alt="Mockup" className={styles.showcase} />
           <div>
               <Heading as="h2">What is it?</Heading>
               <p>
-                emexDE is an iOS app that empowers developers with a full toolchain they can use while even being offline for iOS development on iPhone. It supports Swift, C, Objective-C, C++ and Objective-C++. It’s a powerful Xcode alternative that made the impossible possible, a fully on-device iOS IDE that doesn’t even need a cloud and can even be used with airplane mode enabled. It supports officially iOS 16 all the way up to the latest iOS version. You can compile and run iOS apps on the go with ease, using the entire iOS 26.4 SDK.
+                Nyxian is an iOS app that empowers developers with a full toolchain they can use while even being offline for iOS development on iPhone. It supports Swift, C, Objective-C, C++ and Objective-C++. It’s a powerful Xcode alternative that made the impossible possible, a fully on-device iOS IDE that doesn’t even need a cloud and can even be used with airplane mode enabled. It supports officially iOS 16 all the way up to the latest iOS version. You can compile and run iOS apps on the go with ease, using the entire iOS 26.4 SDK.
               </p>
           </div>
         </div>
         <Admonition type="info">
-          Remember emexDE is still in beta, so some issue might arise! Please report issues over at the <a href="https://github.com/emexlab/emexDE/issues/new/choose" target="_blank" rel="noopener noreferrer" class="">Github</a>.
+          Remember Nyxian is still in beta, so some issue might arise! Please report issues over at the <a href="https://github.com/emexlab/Nyxian/issues/new/choose" target="_blank" rel="noopener noreferrer" class="">Github</a>.
         </Admonition>
         <AdditionalText />
       </main>

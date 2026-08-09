@@ -3,15 +3,15 @@ general:
   permalink: /general
   description: Info about emexLabs as a whole
 
+nyxian:
+  label: Nyxian
+  permalink: /Nyxian
+  description: News about Nyxian
+
 emexos:
   label: emexOS
   permalink: /emexOS
   description: News about emexOS
-
-emexde:
-  label: emexDE
-  permalink: /emexDE
-  description: News about emexDE
 
 emex64:
   label: emex64
