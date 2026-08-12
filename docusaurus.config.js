@@ -173,7 +173,7 @@ const config = {
             title: 'Team & More',
             items: [
               {
-                label: 'Impressum',
+                label: 'Legal Notice',
                 to: 'impressum',
               },
               {
