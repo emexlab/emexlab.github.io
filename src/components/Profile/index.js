@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 
 export default function Profile({ name, role, github, img }) {
-    const image = img || `https://github.com/${github.split('/')[0]}.png`
+    const image = img || `https://avatars.githubusercontent.com/${github.split('/')[0]}`
     return (
         <a className={styles.profile} href={`https://github.com/${github}`} target='_blank' rel='noopener noreferrer'>
             <img alt={name} src={image} />
