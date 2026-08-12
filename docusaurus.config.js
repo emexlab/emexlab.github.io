@@ -173,6 +173,10 @@ const config = {
             title: 'Team & More',
             items: [
               {
+                label: 'Impressum',
+                to: 'impressum',
+              },
+              {
                 label: 'Members',
                 to: 'members',
               },
@@ -190,33 +194,20 @@ const config = {
             title: 'Socials & Contact',
             items: [
               {
+                label: 'Email',
+                href: 'mailto:lucavmu@emexlab.de',
+              },
+              {
+                label: 'X (formerly Twitter)',
+                href: 'https://x.com/emexlabs',
+              },
+              {
                 label: 'Reddit',
                 href: 'https://www.reddit.com/u/emexLabs',
               },
               {
                 label: 'YouTube',
                 href: 'https://www.youtube.com/@emexlabs',
-              },
-              {
-                label: 'Email',
-                href: 'mailto:lucavmu@emexlab.de',
-              },
-            ],
-          },
-          {
-            title: 'News',
-            items: [
-              {
-                label: 'Blog',
-                to: 'blog',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/Cbeg3gJzC7',
-              },
-              {
-                label: 'X (formerly Twitter)',
-                href: 'https://x.com/emexlabs',
               },
             ],
           },
