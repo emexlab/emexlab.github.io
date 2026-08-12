@@ -38,6 +38,10 @@ img {
   object-fit: contain;
 }
 
+aside {
+  float: right;
+}
+
 article:not(:has(> .markdown)), article > .markdown {
   a[class=""] {
     text-decoration: underline;

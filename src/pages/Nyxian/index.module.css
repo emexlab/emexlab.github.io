@@ -14,12 +14,6 @@
   border-radius: 20%;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
 .buttons {
   display: flex;
   align-items: center;
@@ -27,17 +21,35 @@
 }
 
 .showcase {
-  width: 100%;
-  max-width: 50rem;
+  width: 50%;
+  margin-left: 1rem;
 }
 
 .main {
-  max-width: 100rem;
+  max-width: 996px;
+  margin: 0 var(--ifm-spacing-horizontal);
   align-self: center;
 }
 
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+
+  .showcase {
+    float: none;
+    width: auto;
+    max-height: 50vh;
+    margin: 0;
+  }
+
+  .showcase img {
+    max-height: 50vh;
+    width: auto;
+  }
+}
+
 .additionalText {
-  padding: 0 var(--ifm-spacing-horizontal);
   :global(.task-list-item) {
     list-style-type: none;
   }

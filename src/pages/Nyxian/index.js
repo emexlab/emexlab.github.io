@@ -4,7 +4,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import ThemedImage from '@theme/ThemedImage';
 import Heading from '@theme/Heading';
-import Admonition from '@theme/Admonition';
 import styles from './index.module.css';
 import ImagePopup from '@site/src/components/ImagePopup';
 import AdditionalText from './_additionalText.mdx';
@@ -39,20 +38,11 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className={clsx('center', styles.main)}>
+      <main className={clsx('cdenter', styles.main)}>
         <Heading as="h1">Introduction</Heading>
-        <div className={clsx('sections', styles.divided)}>
-          <ImagePopup src={useBaseUrl('/Nyxian/img/mockup.png')} alt="Mockup" className={styles.showcase} />
-          <div>
-              <Heading as="h2">What is it?</Heading>
-              <p>
-                Nyxian is an iOS app that empowers developers with a full toolchain they can use while even being offline for iOS development on iPhone. It supports Swift, C, Objective-C, C++ and Objective-C++. It’s a powerful Xcode alternative that made the impossible possible, a fully on-device iOS IDE that doesn’t even need a cloud and can even be used with airplane mode enabled. It supports officially iOS 16 all the way up to the latest iOS version. You can compile and run iOS apps on the go with ease, using the entire iOS 26.4 SDK.
-              </p>
-          </div>
-        </div>
-        <Admonition type="info">
-          Remember Nyxian is still in beta, so some issue might arise! Please report issues over at the <a href="https://github.com/emexlab/Nyxian/issues/new/choose" target="_blank" rel="noopener noreferrer" class="">Github</a>.
-        </Admonition>
+        <aside className={styles.showcase}>
+          <ImagePopup src={useBaseUrl('/Nyxian/img/mockup.png')} alt="Mockup" />
+        </aside>
         <AdditionalText />
       </main>
     </Layout>
