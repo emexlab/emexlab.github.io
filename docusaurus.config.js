@@ -103,7 +103,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/social-card.png',
+      image: 'Nyxian/img/social-card.png', //Temporary
       colorMode: {
         respectPrefersColorScheme: true,
       },
