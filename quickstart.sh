@@ -5,23 +5,36 @@ error() {
     exit "${2:-1}"
 }
 
-cd "$(dirname "$0")" || error "Failed to change directory"
+cd "$(dirname "$0")" || error "Failed to change directory" $?
 chmod +x ./deploy.sh
 
-apt_install() {
-    if ! command -v node >/dev/null; then
-        if command -v apt-get >/dev/null; then
-            if command -v sudo >/dev/null; then
-                sudo apt-get update && sudo apt-get install nodejs -y
-            else
-                apt-get update && apt-get install nodejs -y
-            fi
-        else
-            error "Couldn't find apt-get, please install nodejs manually"
-        fi
+if ! command -v node >/dev/null; then
+    if command -v sudo >/dev/null; then
+        sudo bash <<'EOF' || error "Failed to install nodejs, please install it manually"
+            apt-get install nodejs npm -y ||
+            dnf install nodejs npm -y ||
+            pacman -S nodejs npm --noconfirm ||
+            apk add nodejs npm ||
+            zypper install -y nodejs npm ||
+            yum install nodejs npm -y ||
+            xbps-install -Sy nodejs ||
+            emerge --ask=n net-libs/nodejs ||
+            eopkg install -y nodejs
+EOF
+    else
+        bash <<'EOF' || error "Failed to install nodejs, please install it manually"
+            apt-get install nodejs npm -y ||
+            dnf install nodejs npm -y ||
+            pacman -S nodejs npm --noconfirm ||
+            apk add nodejs npm ||
+            zypper install -y nodejs npm ||
+            yum install nodejs npm -y ||
+            xbps-install -Sy nodejs ||
+            emerge --ask=n net-libs/nodejs ||
+            eopkg install -y nodejs
+EOF
     fi
-}
-apt_install || error "Failed to install nodejs"
+fi
 
 if ! npm list >/dev/null 2>&1; then
     npm install || error "npm failed to install required packages" $?
