@@ -5,36 +5,39 @@ error() {
     exit "${2:-1}"
 }
 
+install() {
+    if ! command -v "$2" >/dev/null; then
+        if command -v sudo >/dev/null; then
+            sudo bash <<"EOF" || error "Failed to install $1, please install it manually"
+                apt-get install "$1" npm -y ||
+                dnf install "$1" npm -y ||
+                pacman -S "$1" npm --noconfirm ||
+                apk add "$1" npm ||
+                zypper install -y "$1" npm ||
+                yum install "$1" npm -y ||
+                xbps-install -Sy "$1" ||
+                eopkg install -y "$1"
+EOF
+        else
+            bash <<"EOF" || error "Failed to install $1, please install it manually"
+                apt-get install "$1" npm -y ||
+                dnf install "$1" npm -y ||
+                pacman -S "$1" npm --noconfirm ||
+                apk add "$1" npm ||
+                zypper install -y "$1" npm ||
+                yum install "$1" npm -y ||
+                xbps-install -Sy "$1" ||
+                eopkg install -y "$1"
+EOF
+        fi
+    fi
+}
+
 cd "$(dirname "$0")" || error "Failed to change directory" $?
 chmod +x ./deploy.sh
 
-if ! command -v node >/dev/null; then
-    if command -v sudo >/dev/null; then
-        sudo bash <<'EOF' || error "Failed to install nodejs, please install it manually"
-            apt-get install nodejs npm -y ||
-            dnf install nodejs npm -y ||
-            pacman -S nodejs npm --noconfirm ||
-            apk add nodejs npm ||
-            zypper install -y nodejs npm ||
-            yum install nodejs npm -y ||
-            xbps-install -Sy nodejs ||
-            emerge --ask=n net-libs/nodejs ||
-            eopkg install -y nodejs
-EOF
-    else
-        bash <<'EOF' || error "Failed to install nodejs, please install it manually"
-            apt-get install nodejs npm -y ||
-            dnf install nodejs npm -y ||
-            pacman -S nodejs npm --noconfirm ||
-            apk add nodejs npm ||
-            zypper install -y nodejs npm ||
-            yum install nodejs npm -y ||
-            xbps-install -Sy nodejs ||
-            emerge --ask=n net-libs/nodejs ||
-            eopkg install -y nodejs
-EOF
-    fi
-fi
+install nodejs node
+install coreutils tr
 
 if ! npm list >/dev/null 2>&1; then
     npm install || error "npm failed to install required packages" $?

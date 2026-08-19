@@ -2,11 +2,37 @@
 
 set -e
 
+error() {
+    echo "Error: $1" >&2
+    exit "${2:-1}"
+}
+
+while [ "${1#-}" != "$1" ]; do
+    for opt in $([ "${1#--}" = "$1" ] && tr "${1#-}" " " || echo "$1"); do
+        case "$opt" in
+            '--')
+                shift
+                break 2
+                ;;
+            's' | '--skip-build')
+                echo s
+                ;;
+            'u' | '--skip-upload')
+                echo u
+                ;;
+            *)
+                error "unknown option: -$opt"
+                ;;
+        esac
+    done
+    shift
+    unset opt
+done
+
 case "$1" in
     *@*) ;;
     *)
-        echo "Please specify a valid ssh connection! (user@host)" >&2
-        exit 1
+        error "Please specify a valid ssh connection! (user@host)"
         ;;
 esac
 
