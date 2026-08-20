@@ -49,7 +49,7 @@ const config = {
     [
       '@docusaurus/plugin-sitemap',
       {
-        lastmod: new Date(),
+        lastmod: new Date().toISOString().split('T')[0],
       },
     ],
     [
