@@ -2,26 +2,43 @@
 
 set -e
 
+usage() {
+    cat <<EOF
+Usage: $0 ssh-server [options]
+
+Options:
+    -s, --skip-build   Skip building. Use last local build
+    -u, --skip-upload  Skip building and uploading. Use unfinished server-side deployment
+    -h, --help         Show this help message
+EOF
+}
+
 error() {
     echo "Error: $1" >&2
+    [ -n "$3" ] && echo && usage
     exit "${2:-1}"
 }
 
 while [ "${1#-}" != "$1" ]; do
-    for opt in $([ "${1#--}" = "$1" ] && tr "${1#-}" " " || echo "$1"); do
+    for opt in $([ "${1#--}" = "$1" ] && echo "${1#-}" | grep -o . || echo "$1"); do
         case "$opt" in
             '--')
                 shift
                 break 2
                 ;;
             's' | '--skip-build')
-                echo s
+                skip_build=1
                 ;;
             'u' | '--skip-upload')
-                echo u
+                skip_build=1
+                skip_upload=1
+                ;;
+            'h' | '--help')
+                usage
+                exit 0
                 ;;
             *)
-                error "unknown option: -$opt"
+                error "unknown option: -$opt" 1 usage
                 ;;
         esac
     done
@@ -32,29 +49,31 @@ done
 case "$1" in
     *@*) ;;
     *)
-        error "Please specify a valid ssh connection! (user@host)"
+        error "Please specify a valid ssh connection! (user@host)" 1 usage
         ;;
 esac
 
 cd "$(dirname "$0")"
 
-if [ "$2" != "--skip-build" ] && [ "$2" != "-s" ]; then
+if [ "$skip_build" != "1" ]; then
     npm run build
     printf '\n'
 fi
 
-ssh "$1" /bin/sh <<'EOF'
-set -e
-rm -rf "$HOME/emexlabs"
+if [ "$skip_upload" != "1" ]; then
+    ssh "$1" /bin/sh <<'EOF'
+    set -e
+    rm -rf "$HOME/emexlabs"
 EOF
 
-scp -rC ./build "$1:~/emexlabs"
-
-ssh "$1" /bin/sh <<'EOF'
-set -e
-find "$HOME/emexlabs" -type d -exec chmod 755 {} +
-find "$HOME/emexlabs" -type f -exec chmod 644 {} +
+    scp -rC ./build "$1:~/emexlabs"
+    
+    ssh "$1" /bin/sh <<'EOF'
+    set -e
+    find "$HOME/emexlabs" -type d -exec chmod 755 {} +
+    find "$HOME/emexlabs" -type f -exec chmod 644 {} +
 EOF
+fi
 
 # Bootstrap comparison
 set +e
@@ -71,8 +90,7 @@ if [ "$bootstrap_diff" -ne 0 ]; then
         printf 'Bootstrap check failed! Continue anyway? [y/N] '
     fi
     if [ ! -t 0 ]; then
-        echo "No stdin. Exiting." >&2
-        exit 2
+        error "No stdin. Exiting." 2
     fi
     read -r response
     case "$response" in

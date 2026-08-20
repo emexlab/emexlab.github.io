@@ -37,7 +37,7 @@ cd "$(dirname "$0")" || error "Failed to change directory" $?
 chmod +x ./deploy.sh
 
 install nodejs node
-install coreutils tr
+install grep grep
 
 if ! npm list >/dev/null 2>&1; then
     npm install || error "npm failed to install required packages" $?
