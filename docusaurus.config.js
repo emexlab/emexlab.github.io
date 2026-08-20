@@ -46,7 +46,12 @@ const config = {
   plugins: [
     require.resolve('docusaurus-lunr-search'),
     '@docusaurus/plugin-content-pages',
-    '@docusaurus/plugin-sitemap',
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        lastmod: new Date().toISOString(),
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
