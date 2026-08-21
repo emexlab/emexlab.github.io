@@ -195,7 +195,7 @@ li:has(.navbar-icon) {
   width: auto;
 }
 
-li.menu__list-item:has(:not(.navbar-icon)):has(+ li:has(.navbar-icon)) {
+li.menu__list-item:not(:has(.navbar-icon)):has(+ li:has(.navbar-icon)) {
   padding-bottom: 0.25rem;
   border-bottom: 2px solid;
   border-image: linear-gradient(
