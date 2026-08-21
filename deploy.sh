@@ -37,8 +37,14 @@ while [ "${1#-}" != "$1" ]; do
                 usage
                 exit 0
                 ;;
+            '-')
+                error "Invalid options" 1 usage
+                ;;
+            --*)
+                error "Unknown option: $opt" 1 usage
+                ;;
             *)
-                error "unknown option: -$opt" 1 usage
+                error "Unknown option: -$opt" 1 usage
                 ;;
         esac
     done
@@ -95,7 +101,7 @@ if [ "$bootstrap_diff" -ne 0 ]; then
     read -r response
     case "$response" in
         [yY][eE][sS]|[yY]) ;;
-        *) printf 'Cancelling deployment.';  exit 1 ;;
+        *) printf "Cancelling deployment.\n"; exit 1 ;;
     esac
 fi
 
