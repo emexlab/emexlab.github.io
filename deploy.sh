@@ -7,7 +7,7 @@ usage() {
 Usage: $0 ssh-server [options]
 
 Options:
-    -s, --skip-build   Skip building. Use last local build
+    -b, --skip-build   Skip building. Use last local build
     -u, --skip-upload  Skip building and uploading. Use unfinished server-side deployment
     -h, --help         Show this help message
 EOF
@@ -26,7 +26,7 @@ while [ "${1#-}" != "$1" ]; do
                 shift
                 break 2
                 ;;
-            's' | '--skip-build')
+            'b' | '--skip-build' | 's')
                 skip_build=1
                 ;;
             'u' | '--skip-upload')
