@@ -7,9 +7,10 @@ usage() {
 Usage: $0 ssh-server [options]
 
 Options:
-    -b, --skip-build   Skip building. Use last local build
-    -u, --skip-upload  Skip building and uploading. Use unfinished server-side deployment
-    -h, --help         Show this help message
+    -b, --skip-build    Skip building. Use last local build
+    -u, --skip-upload   Skip building and uploading. Use unfinished server-side deployment
+    -n, --no-batchmode  Disable batchmode for ssh
+    -h, --help          Show this help message
 EOF
 }
 
@@ -18,6 +19,8 @@ error() {
     [ -n "$3" ] && echo && usage
     exit "${2:-1}"
 }
+
+openssh_opts='-o BatchMode=true '
 
 while [ "${1#-}" != "$1" ]; do
     for opt in $([ "${1#--}" = "$1" ] && echo "${1#-}" | grep -o . || echo "$1"); do
@@ -32,6 +35,9 @@ while [ "${1#-}" != "$1" ]; do
             'u' | '--skip-upload')
                 skip_build=1
                 skip_upload=1
+                ;;
+            'n' | '--no-batchmode')
+                openssh_opts="-o BatchMode=false "
                 ;;
             'h' | '--help')
                 usage
@@ -67,26 +73,23 @@ if [ "$skip_build" != "1" ]; then
 fi
 
 if [ "$skip_upload" != "1" ]; then
-    ssh "$1" /bin/sh <<'EOF'
+    ssh $openssh_opts"$1" /bin/sh <<'EOF'
     set -e
     rm -rf "$HOME/emexlabs"
 EOF
 
-    scp -rC ./build "$1:~/emexlabs"
+    scp -rC $openssh_opts./build "$1:~/emexlabs"
     
-    ssh "$1" /bin/sh <<'EOF'
+    ssh $openssh_opts"$1" /bin/sh <<'EOF'
     set -e
     find "$HOME/emexlabs" -type d -exec chmod 755 {} +
     find "$HOME/emexlabs" -type f -exec chmod 644 {} +
 EOF
 fi
 
+ssh $openssh_opts"$1" /bin/sh -c "$(cat <<'EOF'
 # Bootstrap comparison
-set +e
-ssh "$1" /bin/sh <<'EOF'
 diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
-exit $?
-EOF
 bootstrap_diff=$?
 set -e
 if [ "$bootstrap_diff" -ne 0 ]; then
@@ -104,9 +107,6 @@ if [ "$bootstrap_diff" -ne 0 ]; then
         *) printf "Cancelling deployment.\n"; exit 1 ;;
     esac
 fi
-
-ssh "$1" /bin/sh <<'EOF'
-set -e
 
 # Deployment
 trap '
@@ -135,3 +135,4 @@ mv "$HOME/emexlabs" "$HOME/$backup_path"
 trap - 0
 printf '\n\033[33;1mBackup successful!\033[0m\n'
 EOF
+)"
