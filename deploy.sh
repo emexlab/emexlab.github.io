@@ -20,6 +20,8 @@ error() {
     exit "${2:-1}"
 }
 
+openssh_opts='-t '
+
 while [ "${1#-}" != "$1" ]; do
     for opt in $([ "${1#--}" = "$1" ] && echo "${1#-}" | grep -o . || echo "$1"); do
         case "$opt" in
@@ -87,9 +89,12 @@ EOF
 EOF
 fi
 
-ssh "$openssh_opts" "$1" /bin/sh -c "$(cat <<'EOF'
 # Bootstrap comparison
+set +e
+ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
 diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
+exit $?
+EOF
 bootstrap_diff=$?
 set -e
 if [ "$bootstrap_diff" -ne 0 ]; then
@@ -107,6 +112,9 @@ if [ "$bootstrap_diff" -ne 0 ]; then
         *) printf "Cancelling deployment.\n"; exit 1 ;;
     esac
 fi
+
+ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
+set -e
 
 # Deployment
 trap '
@@ -135,4 +143,3 @@ mv "$HOME/emexlabs" "$HOME/$backup_path"
 trap - 0
 printf '\n\033[33;1mBackup successful!\033[0m\n'
 EOF
-)"

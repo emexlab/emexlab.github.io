@@ -178,8 +178,8 @@ const config = {
             title: 'Team & More',
             items: [
               {
-                label: 'Legal Notice',
-                to: 'impressum',
+                label: 'Imprint (Legal Notice)',
+                to: 'imprint',
               },
               {
                 label: 'Members',
@@ -313,7 +313,6 @@ const config = {
 if (['production', 'staging', 'testing'].includes(process.env.NODE_ENV)) {
   config.onBrokenLinks = 'throw';
   config.onBrokenAnchors = 'throw';
-  config.onBrokenMarkdownLinks = 'throw';
   config.onDuplicateRoutes = 'throw';
   config.markdown.hooks.onBrokenMarkdownLinks = 'throw';
   config.markdown.hooks.onBrokenMarkdownImages = 'throw';
