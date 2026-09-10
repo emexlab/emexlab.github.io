@@ -20,8 +20,6 @@ error() {
     exit "${2:-1}"
 }
 
-openssh_opts='-o BatchMode=true '
-
 while [ "${1#-}" != "$1" ]; do
     for opt in $([ "${1#--}" = "$1" ] && echo "${1#-}" | grep -o . || echo "$1"); do
         case "$opt" in
@@ -37,7 +35,7 @@ while [ "${1#-}" != "$1" ]; do
                 skip_upload=1
                 ;;
             'n' | '--no-batchmode')
-                openssh_opts="-o BatchMode=false "
+                no_batchmode=1
                 ;;
             'h' | '--help')
                 usage
@@ -58,6 +56,8 @@ while [ "${1#-}" != "$1" ]; do
     unset opt
 done
 
+[ -z "$no_batchmode" ] && openssh_opts='-o BatchMode=true '
+
 case "$1" in
     *@*) ;;
     *)
@@ -73,21 +73,21 @@ if [ "$skip_build" != "1" ]; then
 fi
 
 if [ "$skip_upload" != "1" ]; then
-    ssh $openssh_opts"$1" /bin/sh <<'EOF'
+    ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
     set -e
     rm -rf "$HOME/emexlabs"
 EOF
 
-    scp -rC $openssh_opts./build "$1:~/emexlabs"
+    scp -rC "$openssh_opts" ./build "$1:~/emexlabs"
     
-    ssh $openssh_opts"$1" /bin/sh <<'EOF'
+    ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
     set -e
     find "$HOME/emexlabs" -type d -exec chmod 755 {} +
     find "$HOME/emexlabs" -type f -exec chmod 644 {} +
 EOF
 fi
 
-ssh $openssh_opts"$1" /bin/sh -c "$(cat <<'EOF'
+ssh "$openssh_opts" "$1" /bin/sh -c "$(cat <<'EOF'
 # Bootstrap comparison
 diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
 bootstrap_diff=$?
