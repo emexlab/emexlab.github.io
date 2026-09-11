@@ -126,7 +126,7 @@ const config = {
             position: 'left',
           },
           {
-            to: 'emexOS/docs', // Revert this to 'emexOS'
+            to: 'emexOS/docs',
             label: 'emexOS',
             position: 'left',
           },
@@ -139,6 +139,7 @@ const config = {
             to: 'blog',
             label: 'Blog',
             position: 'left',
+            className: 'navbar-separator'
           },
           /*{
             type: 'localeDropdown',
@@ -148,25 +149,25 @@ const config = {
           {
             to: 'emexMC',
             position: 'right',
-            className: "navbar-icon emexmc",
+            className: 'navbar-icon emexmc',
             'aria-label': 'emexMC',
           },
           {
             href: 'https://github.com/emexlab',
             position: 'right',
-            className: "navbar-icon github",
+            className: 'navbar-icon github',
             'aria-label': 'GitHub',
           },
           {
             href: 'https://discord.gg/H96bhkAHjB',
             position: 'right',
-            className: "navbar-icon discord",
+            className: 'navbar-icon discord',
             'aria-label': 'Discord',
           },
           {
             href: 'https://github.com/sponsors/emexlab',
             position: 'right',
-            className: "navbar-icon sponsor",
+            className: 'navbar-icon sponsor',
             'aria-label': 'Sponsor',
           },
         ],
