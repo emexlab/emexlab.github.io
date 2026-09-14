@@ -14,7 +14,7 @@ General:
 - [ ] Make nightly github api, because nightly.link doesn't support file artifacts
 
 emexOS:
-- ~~[ ] Create homepage~~
+- [ ] ~~Create homepage~~
 
 Nyxian:
 - [x] Finish homepage
