@@ -74,4 +74,4 @@ You can find an automatic build of the newest state at https://emexlab.github.io
 This will build the site and upload it via ssh to the specified host as the specified user.
 
 > [!NOTE]
-> It's recommended to set up SSH keys beforehand. Otherwise, you'll be prompted for your SSH password several times during deployment.
+> It's recommended to set up SSH keys beforehand. Otherwise, pass `-n` and expect several SSH password prompts during deployment.
