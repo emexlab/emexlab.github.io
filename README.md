@@ -11,11 +11,12 @@
 ## Todo
 General:
 - [x] Make navbar logos be horizontal in the sidebar on mobile
+- [ ] Make nightly github api, because nightly.link doesn't support file artifacts
 
 emexOS:
-- [ ] Create homepage
+- ~~[ ] Create homepage~~
 
-emexDE:
+Nyxian:
 - [x] Finish homepage
 - Documentations to write:
     - [ ] Usage guide/Tutorial
