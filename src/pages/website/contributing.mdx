@@ -1,12 +1,77 @@
 # Contributing to this Website
 
-## Quickstart
+Select where you want to contribute below.
 
-You can click the `Edit this page` button at the bottom of any page to start editing it on GitHub or you can go to [emexlab/emexlab.github.io](https://github.com/emexlab/emexlab.github.io/tree/main/).
+<Tabs queryString="method">
+    <TabItem value="github" label="Github" default>
+        ## Quickstart
 
-:::tip[general tip]
+        You can click the `Edit this page` button at the bottom of any page to start editing it on GitHub or you can go to [emexlab/emexlab.github.io](https://github.com/emexlab/emexlab.github.io/tree/main/).
 
-You can find more documentation at [docusaurus.io](https://docusaurus.io/docs/category/guides).
+        ## Github Pages
+
+        You can find an automatic build of the newest state at https://emexlab.github.io/
+    </TabItem>
+    <TabItem value="local" label="Locally">
+        ## Quickstart
+
+        ```bash
+        ./quickstart.sh
+        ```
+
+        This script setups everything for you.
+
+        ## Installation
+
+        ```bash
+        npm install
+        ```
+
+        ## Local Development
+
+        ```bash
+        npm run start
+        ```
+
+        This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+        ## Build
+
+        ```bash
+        npm run build
+        ```
+
+        This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+        ## Deployment
+
+        ### Github Pages
+
+        You can find an automatic build of the newest state at https://emexlab.github.io/
+
+        ### SSH
+
+        ```bash
+        ./deploy.sh user@host
+        ```
+
+        This will build the site and upload it via ssh to the specified host as the specified user.
+
+        :::note
+
+        It's recommended to set up SSH keys beforehand. Otherwise, pass `-n` and expect several SSH password prompts during deployment.
+
+        :::
+    </TabItem>
+</Tabs>
+    
+
+:::tip
+
+There is a [Todo](https://github.com/emexlab/emexlab.github.io#Todo) list in the README.  
+This is a good starting point for first time contributors.
+
+The README also explains how to get started.
 
 :::
 
@@ -15,7 +80,7 @@ You can find more documentation at [docusaurus.io](https://docusaurus.io/docs/ca
 All files should be use `.mdx` instead of `.md`.  
 All folders must contain an `index.mdx`. These and all `.mdx` files directly in a `/docs` folder should also contain a value for `sidebar_position` in the metadata.
 
-``` mdx title="exampleDoc.mdx"
+```mdx title="exampleDoc.mdx"
 ---
 sidebar_position: 2
 ---
@@ -33,8 +98,8 @@ Please follow the best pratices from [markdownguide.org/basic-syntax](https://ww
 
 :::tip
 
-There is a [Todo](https://github.com/emexlab/emexlab.github.io#Todo) list in the README.  
-This is a good starting point for first time contributors
+You can find more documentation at [docusaurus.io](https://docusaurus.io/docs/category/guides).  
+The websites github is also a good reference point: [docusaurus/website](https://github.com/facebook/docusaurus/tree/main/website)
 
 :::
 
