@@ -7,7 +7,7 @@
   "website": "https://emexlabs.org/", 
   "tintColor": "#000",
   "featuredApps": [
-    "com.cr4zy.nyxian"
+    "org.emexlabs.nyxian"
   ],
   "apps": [
     {
