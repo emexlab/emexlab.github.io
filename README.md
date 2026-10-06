@@ -18,6 +18,7 @@ emexOS:
 
 Nyxian:
 - [x] Finish homepage
+- [ ] Make github action that updates the apps.json file
 - Documentations to write:
     - [ ] Usage guide/Tutorial
     - [ ] ~~nxtool guide~~
