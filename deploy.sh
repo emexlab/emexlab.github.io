@@ -2,6 +2,9 @@
 
 set -e
 
+# Contains a list of paths that will not be changed on the deployment server
+excluded_paths="/apt:/bootstrap"
+
 usage() {
     cat <<EOF
 Usage: $0 ssh-server [options]
@@ -82,35 +85,22 @@ EOF
 
     scp -rC "$openssh_opts" ./build "$1:~/emexlabs"
     
-    ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
+    # Prepair deployment (fixup and etc.)
+    ssh "$openssh_opts" "$1" /bin/sh <<EOF
     set -e
-    find "$HOME/emexlabs" -type d -exec chmod 755 {} +
-    find "$HOME/emexlabs" -type f -exec chmod 644 {} +
-EOF
-fi
 
-# Bootstrap comparison
-set +e
-ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
-diff -qr "$HOME/emexlabs/bootstrap" "/var/www/emexlabs/bootstrap" >/dev/null 2>&1
-exit $?
+    find "\$HOME/emexlabs" -type d -exec chmod 755 {} +
+    find "\$HOME/emexlabs" -type f -exec chmod 644 {} +
+
+    excluded_paths='$excluded_paths'
+
+    IFS=:
+    for exclude in \$excluded_paths; do
+        [ -e "/var/www/emexlabs\$exclude" ] || continue
+        rm -rf \$HOME/emexlabs\$exclude
+        cp -a /var/www/emexlabs\$exclude \$HOME/emexlabs\$exclude
+    done
 EOF
-bootstrap_diff=$?
-set -e
-if [ "$bootstrap_diff" -ne 0 ]; then
-    if [ "$bootstrap_diff" -eq 1 ]; then
-        printf 'Bootstrap is different! Replace it? [y/N] '
-    else
-        printf 'Bootstrap check failed! Continue anyway? [y/N] '
-    fi
-    if [ ! -t 0 ]; then
-        error "No stdin. Exiting." 2
-    fi
-    read -r response
-    case "$response" in
-        [yY][eE][sS]|[yY]) ;;
-        *) printf "Cancelling deployment.\n"; exit 1 ;;
-    esac
 fi
 
 ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
