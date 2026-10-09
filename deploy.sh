@@ -96,7 +96,9 @@ EOF
 
     IFS=:
     for exclude in \$excluded_paths; do
+        [ -n "\$exclude" ] || continue
         [ -e "/var/www/emexlabs\$exclude" ] || continue
+
         rm -rf \$HOME/emexlabs\$exclude
         cp -a /var/www/emexlabs\$exclude \$HOME/emexlabs\$exclude
     done
