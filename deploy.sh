@@ -7,13 +7,14 @@ excluded_paths="/apt:/bootstrap"
 
 usage() {
     cat <<EOF
-Usage: $0 ssh-server [options]
+Usage: $0 [options] user@host
 
 Options:
-    -b, --skip-build    Skip building. Use last local build
-    -u, --skip-upload   Skip building and uploading. Use unfinished server-side deployment
-    -n, --no-batchmode  Disable batchmode for ssh
-    -h, --help          Show this help message
+    -b, --skip-build        Skip building. Use last local build.
+    -u, --skip-upload       Skip building and uploading. Use unfinished server-side deployment.
+    -n, --no-batchmode      Disable batchmode for ssh.
+    -k, --keep-old-backups  Don't perform old backup cleanup.
+    -h, --help              Show this help message.
 EOF
 }
 
@@ -23,7 +24,7 @@ error() {
     exit "${2:-1}"
 }
 
-openssh_opts='-t '
+openssh_opts='-o BatchMode=true'
 
 while [ "${1#-}" != "$1" ]; do
     for opt in $([ "${1#--}" = "$1" ] && echo "${1#-}" | grep -o . || echo "$1"); do
@@ -40,7 +41,10 @@ while [ "${1#-}" != "$1" ]; do
                 skip_upload=1
                 ;;
             'n' | '--no-batchmode')
-                no_batchmode=1
+                openssh_opts=''
+                ;;
+            'k' | '--keep-old-backups')
+                keep_old_backups=1
                 ;;
             'h' | '--help')
                 usage
@@ -61,8 +65,6 @@ while [ "${1#-}" != "$1" ]; do
     unset opt
 done
 
-[ -z "$no_batchmode" ] && openssh_opts='-o BatchMode=true '
-
 case "$1" in
     *@*) ;;
     *)
@@ -78,15 +80,15 @@ if [ "$skip_build" != "1" ]; then
 fi
 
 if [ "$skip_upload" != "1" ]; then
-    ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
+    ssh $openssh_opts "$1" /bin/sh <<'EOF'
     set -e
     rm -rf "$HOME/emexlabs"
 EOF
 
-    scp -rC "$openssh_opts" ./build "$1:~/emexlabs"
+    scp -rC $openssh_opts ./build "$1:~/emexlabs"
     
     # Prepair deployment (fixup and etc.)
-    ssh "$openssh_opts" "$1" /bin/sh <<EOF
+    ssh $openssh_opts "$1" /bin/sh <<EOF
     set -e
 
     find "\$HOME/emexlabs" -type d -exec chmod 755 {} +
@@ -105,33 +107,77 @@ EOF
 EOF
 fi
 
-ssh "$openssh_opts" "$1" /bin/sh <<'EOF'
+ssh $openssh_opts "$1" /bin/sh -s -- "$keep_old_backups" <<'EOF'
 set -e
 
 # Deployment
 trap '
-status=$?
-printf "\n\033[31;1mDeployment failed!\nMaybe your servers mv command does not support --exchange?\033[0m\n" >&2
-exit $status
+    status=$?
+    printf "\033[0;31;1mDeployment failed!\033[0m\nMaybe your servers mv command does not support --exchange?\n" >&2
+    exit $status
 ' 0
+
+printf '\n\033[0;36;1mDeploying...\033[0m\n'
 mv --exchange -T "$HOME/emexlabs" "/var/www/emexlabs"
-trap '
-status=$?
-printf "\n\033[31;1mBackup failed!\033[0m\n" >&2
-exit $status
-' 0
-printf '\n\033[32;1mDeployed successfully!\033[0m\n\nBacking up old site...\n'
+printf '\033[0;32;1mDeployed successfully!\033[0m\n'
+
 
 # Backup creation
+trap '
+    status=$?
+    printf "\033[0;31;1mBackup failed!\033[0m\nPlease do the backup manually\n" >&2
+    exit $status
+' 0
+
+printf '\n\033[0;33;1mBacking up old website...\033[0m\n'
 mkdir -p "$HOME/backups"
 backup_timestamp=$(date +%Y%m%d_%H%M%S)
+
 backup_path="backups/website-${backup_timestamp}"
 i=0
 while [ -e "$HOME/$backup_path" ]; do
     i=$((i + 1))
     backup_path="backups/website-${backup_timestamp}-$i"
 done
+
 mv "$HOME/emexlabs" "$HOME/$backup_path"
+printf '\033[0;32;1mBackup successful!\033[0m\n'
+
+
+# Backup Cleanup
+if [ "$1" != "1" ]; then
+    trap '
+        printf "\033[0;31;1mBackup cleanup failed!\033[0m\nThis is non-critical\n" >&2
+        exit 0
+    ' 0
+
+    printf '\n\033[0;34;1mClearing out old backups...\033[0m\n'
+    cutoff=$(date -v-30d +%Y%m%d 2>/dev/null) ||   # macOS/BSD
+    cutoff=$(date -d '30 days ago' +%Y%m%d 2>/dev/null) ||   # GNU/Linux
+    cutoff=$(date -d "@$(( $(date +%s) - 30*86400 ))" +%Y%m%d)   # BusyBox fallback
+
+    case $cutoff in
+        [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]) ;;
+        *) echo "Could not compute cutoff date" >&2; exit 0 ;;
+    esac
+
+    for dir in "$HOME"/backups/website-*; do
+        [ -d "$dir" ] || continue
+        name=${dir##*/}
+        stamp=${name#website-}
+        day=${stamp%%_*}
+
+        case $day in
+            [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]) ;;
+            *) continue ;;
+        esac
+
+        if [ "$day" -lt "$cutoff" ]; then
+            echo "Deleting $dir"
+            rm -rf -- "$dir"
+        fi
+    done
+fi
+
 trap - 0
-printf '\n\033[33;1mBackup successful!\033[0m\n'
 EOF
