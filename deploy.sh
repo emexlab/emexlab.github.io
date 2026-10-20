@@ -2,9 +2,6 @@
 
 set -e
 
-# Contains a list of paths that will not be changed on the deployment server
-excluded_paths="/apt:/bootstrap:/community"
-
 usage() {
     cat <<EOF
 Usage: $0 [options] user@host
@@ -88,22 +85,11 @@ EOF
     scp -rC $openssh_opts ./build "$1:~/emexlabs"
     
     # Prepair deployment (fixup and etc.)
-    ssh $openssh_opts "$1" /bin/sh -s -- "$excluded_paths" <<'EOF'
+    ssh $openssh_opts "$1" /bin/sh <<'EOF'
     set -e
 
     find "$HOME/emexlabs" -type d -exec chmod 755 {} +
     find "$HOME/emexlabs" -type f -exec chmod 644 {} +
-
-    excluded_paths="$1"
-
-    IFS=:
-    for exclude in $excluded_paths; do
-        [ -n "$exclude" ] || continue
-        [ -e "/var/www/emexlabs$exclude" ] || continue
-
-        rm -rf $HOME/emexlabs$exclude
-        cp -a /var/www/emexlabs$exclude $HOME/emexlabs$exclude
-    done
 EOF
 fi
 
