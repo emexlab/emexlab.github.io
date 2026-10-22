@@ -5,6 +5,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const url = process.env.URL || 'https://emexlabs.org/';
 const baseUrl = process.env.BASE_URL || '/';
 
+const discordInvite = "https://discord.gg/C2kdHTSHSt";
+
 const config = {
   title: 'emexLabs',
   tagline: 'Unfolding the power of programming',
@@ -25,6 +27,10 @@ const config = {
 
   url: url,
   baseUrl: baseUrl,
+
+  customFields: {
+    discordInvite: discordInvite,
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -159,7 +165,7 @@ const config = {
             'aria-label': 'GitHub',
           },
           {
-            href: 'https://discord.gg/H96bhkAHjB',
+            href: discordInvite,
             position: 'right',
             className: 'navbar-icon discord',
             'aria-label': 'Discord',

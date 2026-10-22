@@ -4,245 +4,34 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Installation
 
-:::danger
+First you will have to choose the installation method you want to use for Nyxian.  
+We recommend SideStore or Impactor.
 
-Do not downgrade Nyxian! You will lose all your data!
-
-:::
-
-:::important
-
-This guide is no longer accurate for SideStore.  
-It will be updated next Nyxian update.
-
-:::
-
-<Tabs queryString="device">
-   <TabItem value="jailed" label="Jailed" default>
-      ## Jailed
-
-      :::info[Important]
-
-      Do not forget to keep all extensions when installing!
-      
-      :::
-
-      :::warning
-
-      Nyxian will only work, if sideloaded with an apple developer account (free or paid).  
-      **It will not work in LiveContainer!**
-
-      :::
-
-      You will need a free or paid apple developer account, which you have to use to sign and install Nyxian.
-      Your developer certificate will be required again in the ["Importing your Developer Certificate"](#importing-your-developer-certificate) section.
-
-      ### Requirements
-
-      - iOS/iPadOS 16+
-      - AltStore 2.0+ / SideStore 0.6.0+
-
-      :::note
-
-      You can find a guide for installing SideStore [here](https://docs.sidestore.io/docs/installation/prerequisites)
-
-      :::
-
-      ### Download
-      <a href={`https://altdirect.app/?url=${useBaseUrl('/apps.json', {absolute: true})}&exclude=livecontainer`} target="_blank">
-         <img src="https://github.com/stikstore/altdirect/blob/main/assets/png/AltSource_Blue.png?raw=true" alt="Add AltSource" width="200" />
-      </a>
-      <a href="https://github.com/emexlab/Nyxian/releases/latest/download/Nyxian.ipa" target="_blank">
-         <img src="https://github.com/stikstore/altdirect/blob/main/assets/png/Download_Blue.png?raw=true" alt="Download .ipa" width="200" />
-      </a>
-
-      ### Importing your Developer Certificate
-      Open the store you used to install Nyxian and goto it's settings tab. At the bottom there should be an `Export Signing Certificate...` button. Click it and enter any password (you will just need to remember it for a short time).  
-      Now open Nyxian and in the settings tab select `Certificate`. Now just click `Import Certificate`, pick your previously exported certificate and enter its password.
-
-      If everything went well you should see <span style={{ color: 'green' }}>`Certificate Valid`</span>.
-   </TabItem>
-   <TabItem value="trollstore" label="TrollStore">
-      ## TrollStore
-
-      :::warning
-
-      The Trollstore and Jailbreak version of Nyxian are **deprecated!**  
-      Either use this outdated version provided below or [install the Jailed version](installation.mdx?device=jailed).
-
-      :::
-
-      <details>
-         <summary>Installing TrollStore</summary>
-         :::note
-
-         You can find the full installation guide [here](https://ios.cfw.guide/installing-trollstore/)
-
-         :::
-         <table style={{tableLayout: 'fixed', textAlign: 'center' }}>
-            <colgroup>
-               <col span="1" />
-               <col span="1" />
-               <col span="1" />
-               <col span="1" />
-               <col span="1" />
-            </colgroup>
-            <thead>
-               <tr>
-                  <th>From</th>
-                  <th>To</th>
-                  <th>arm64 (A8)</th>
-                  <th>arm64 (A9-A11)</th>
-                  <th>arm64e (A12-A17/M1-M2)</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr>
-                  <td colspan="2">14.0 beta 1 and earlier</td>
-                  <td colspan="3">Unsupported</td>
-               </tr>
-               <tr>
-                  <td>14.0 beta 2</td>
-                  <td>14.8.1</td>
-                  <td colspan="2"><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollhelperota" target="_blank">TrollHelperOTA</a></td>
-               </tr>
-               <tr>
-                  <td>15.0</td>
-                  <td>15.5 beta 4</td>
-                  <td colspan="3"><a href="https://ios.cfw.guide/installing-trollstore-trollhelperota" target="_blank">TrollHelperOTA</a></td>
-               </tr>
-               <tr>
-                  <td>15.5</td>
-                  <td>15.5</td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollinstallermdc" target="_blank">TrollInstallerMDC</a></td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollhelperota" target="_blank">TrollHelperOTA</a></td>
-               </tr>
-               <tr>
-                  <td>15.6 beta 1</td>
-                  <td>15.6 beta 3</td>
-                  <td colspan="3"><a href="https://ios.cfw.guide/installing-trollstore-trollhelperota" target="_blank">TrollHelperOTA</a></td>
-               </tr>
-               <tr>
-                  <td>15.6 beta 4</td>
-                  <td>15.6.1</td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollinstallermdc" target="_blank">TrollInstallerMDC</a></td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollhelperota" target="_blank">TrollHelperOTA</a></td>
-               </tr>
-               <tr>
-                  <td>15.7</td>
-                  <td>15.7.1</td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollinstallermdc" target="_blank">TrollInstallerMDC</a></td>
-                  <td colspan="2"><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-               </tr>
-               <tr>
-                  <td>15.7.2</td>
-                  <td>15.8.6</td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollmisaka" target="_blank">TrollMisaka</a></td>
-                  <td colspan="2"><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-               </tr>
-               <tr>
-                  <td>15.8.7</td>
-                  <td>15.8.7</td>
-                  <td colspan="2"><a href="https://ios.cfw.guide/installing-trollstore-trollrestore" target="_blank">TrollRestore</a></td>
-                  <td>Not Applicable</td>
-               </tr>
-               <tr>
-                  <td>16.0 beta 1</td>
-                  <td>16.0 beta 5</td>
-                  <td>Not Applicable</td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollhelperota" target="_blank">TrollHelperOTA</a></td>
-               </tr>
-               <tr>
-                  <td>16.0 beta 6</td>
-                  <td>16.6.1</td>
-                  <td>Not Applicable</td>
-                  <td colspan="2"><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-               </tr>
-               <tr>
-                  <td>16.7 RC</td>
-                  <td>16.7 RC</td>
-                  <td>Not Applicable</td>
-                  <td colspan="2"><a href="https://ios.cfw.guide/installing-trollstore-trollrestore" target="_blank">TrollRestore</a></td>
-               </tr>
-               <tr>
-                  <td>16.7</td>
-                  <td>16.7.15</td>
-                  <td>Not Applicable</td>
-                  <td colspan="2">Unsupported</td>
-               </tr>
-               <tr>
-                  <td>17.0 beta 1</td>
-                  <td>17.0 beta 4</td>
-                  <td>Not Applicable</td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollinstallerx" target="_blank">TrollInstallerX</a></td>
-                  <td><a href="https://ios.cfw.guide/installing-trollstore-trollrestore" target="_blank">TrollRestore</a></td>
-               </tr>
-               <tr>
-                  <td>17.0 beta 5</td>
-                  <td>17.0</td>
-                  <td>Not Applicable</td>
-                  <td colspan="2"><a href="https://ios.cfw.guide/installing-trollstore-trollrestore" target="_blank">TrollRestore</a></td>
-               </tr>
-               <tr>
-                  <td colspan="2">17.0.1 and later</td>
-                  <td>Not Applicable</td>
-                  <td colspan="2">Unsupported</td>
-               </tr>
-            </tbody>
-            </table>
-      </details>
-
-      ### Download
-      <a href={`trollapps://add?url=${useBaseUrl('/trollapps.json', {absolute: true}).replace(/^https?:\/\//, '')}`}>
-         <img src={useBaseUrl('/Nyxian/img/TrollStore/TrollApps_Add.png')} alt="Add TrollApps" width="200" />
-      </a>
-      <a href="apple-magnifier://install?url=https://github.com/emexlab/Nyxian/releases/download/0.10.1/nyxian.tipa">
-         <img src={useBaseUrl('/Nyxian/img/TrollStore/Install.png')} alt="Install .tipa" width="200" />
-      </a>
-      <a href="https://github.com/emexlab/Nyxian/releases/download/0.10.1/nyxian.tipa" target="_blank">
-         <img src={useBaseUrl('/Nyxian/img/TrollStore/Download.png')} alt="Download .tipa" width="200" />
-      </a>
-   </TabItem>
-   <TabItem value="jailbroken" label="Jailbroken">
-      ## Jailbroken
-
-      :::warning
-
-      The Trollstore and Jailbreak version of Nyxian are **deprecated!**  
-      Either use this outdated version provided below or [install the Jailed version](installation.mdx?device=jailed).
-
-      :::
-
-      :::note
-
-      You can check if a jailbreak is available for your device [here](https://ios.cfw.guide/get-started/)
-
-      :::
-
-      # Download
-
-      Download the .deb file for your type of jailbreak below and install it.
-
-      | Rootless                                     | Roothide                                      | Rootful                                   |
-      |----------------------------------------------|-----------------------------------------------|-------------------------------------------|
-      | [nyxian_0.10.1_iphoneos-arm64.deb][rootless] | [nyxian_0.10.1_iphoneos-arm64e.deb][roothide] | [nyxian_0.10.1_iphoneos-arm.deb][rootful] |
-   </TabItem>
+<Tabs queryString="sideloader">
+    <TabItem value="sidestore" label="SideStore" default>
+        TBA
+    </TabItem>
+    <TabItem value="altstore" label="AltStore">
+        TBA
+    </TabItem>
+    <TabItem value="impactor" label="Impactor">
+        TBA
+    </TabItem>
+    <TabItem value="ksign" label="KSign">
+        TBA
+    </TabItem>
+    <TabItem value="feather" label="Feather">
+        TBA
+    </TabItem>
+    <TabItem value="sideloadly" label="Sideloadly">
+        TBA
+    </TabItem>
+    <TabItem value="services" label="Online signers services and etc.">
+        Nyxian does not support such installation methods, since they don't expose a .p12 certificate file, which Nyxian relies on.
+    </TabItem>
 </Tabs>
 
-:::info
-
-If you encounter any issues look at the [FAQ](faq.mdx) page.
-
-:::
-
-[rootless]: https://github.com/emexlab/Nyxian/releases/download/0.10.1/nyxian_0.10.1_iphoneos-arm64.deb
-[roothide]: https://github.com/emexlab/Nyxian/releases/download/0.10.1/nyxian_0.10.1_iphoneos-arm64e.deb
-[rootful]: https://github.com/emexlab/Nyxian/releases/download/0.10.1/nyxian_0.10.1_iphoneos-arm.deb
+Lorem ipsum

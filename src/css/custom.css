@@ -185,3 +185,7 @@ li:has(.navbar-icon) {
 li:has(.navbar-separator) {
   border-bottom: 2px solid gray;
 }
+
+.tabs__item {
+  white-space: nowrap;
+}
