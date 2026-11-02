@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const url = process.env.URL || 'https://emexlabs.org/';
 const baseUrl = process.env.BASE_URL || '/';
 
-const discordInvite = "https://discord.gg/C2kdHTSHSt";
+const msgServerInvite = "https://fluxer.gg/PLQlvDkC";
 
 const config = {
   title: 'emexLabs',
@@ -29,7 +29,7 @@ const config = {
   baseUrl: baseUrl,
 
   customFields: {
-    discordInvite: discordInvite,
+    msgServerInvite: msgServerInvite,
   },
 
   // Even if you don't use internationalization, you can use this field to set
@@ -165,10 +165,10 @@ const config = {
             'aria-label': 'GitHub',
           },
           {
-            href: discordInvite,
+            href: msgServerInvite,
             position: 'right',
-            className: 'navbar-icon discord',
-            'aria-label': 'Discord',
+            className: 'navbar-icon messaging-server',
+            'aria-label': 'Fluxer Server',
           },
           {
             href: 'https://github.com/sponsors/emexlab',

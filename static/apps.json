@@ -332,13 +332,13 @@
   ],
   "news": [
     {
-      "title": "Discord",
-      "identifier": "discord",
-      "caption": "The offical emexLabs Discord Server",
+      "title": "Fluxer",
+      "identifier": "fluxer",
+      "caption": "The offical emexLabs Fluxer Server",
       "date": "2026-02-23T20:24:00Z",
       "tintColor": "#5865F2",
       "notify": false,
-      "url": "https://discord.gg/C2kdHTSHSt"
+      "url": "https://fluxer.gg/PLQlvDkC"
     }
   ]
 }
