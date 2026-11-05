@@ -185,8 +185,8 @@ const config = {
             title: 'Team & More',
             items: [
               {
-                label: 'Imprint (Legal Notice)',
-                to: 'imprint',
+                label: 'Legal Notice',
+                to: 'legal-notice',
               },
               {
                 label: 'Members',
