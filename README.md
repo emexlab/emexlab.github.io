@@ -1,6 +1,5 @@
 # emexLabs website
-[![Discord invite](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Fv9%2Finvites%2FH96bhkAHjB&query=profile.member_count&suffix=%20Members&style=for-the-badge&logo=discord&logoColor=fff&label=emexLabs%20Discord&labelColor=000&color=fff
-)](https://discord.gg/H96bhkAHjB)
+[![Fluxer invite](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Ffluxer.com%2Fapi%2Fv1%2Finvites%2FPLQlvDkC&query=member_count&suffix=%20members&style=for-the-badge&logo=fluxer&label=Fluxer&labelColor=000&color=fff)](https://fluxer.gg/PLQlvDkC)
 [![Deploy test site](https://img.shields.io/github/actions/workflow/status/emexlab/emexlab.github.io/test_deploy.yml?style=for-the-badge&logo=github&label=Deploy%20test%20site&labelColor=000&color=fff
 )](https://github.com/emexlab/emexlab.github.io/actions/workflows/test_deploy.yml)
 [![Docusaurus Version](https://img.shields.io/github/package-json/dependency-version/emexlab/emexlab.github.io/%40docusaurus%2Fcore?style=for-the-badge&logo=docusaurus&logoColor=fff&label=Docusaurus&labelColor=000&color=fff
